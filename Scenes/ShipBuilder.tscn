@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgxop0imhvyjq"]
+[gd_scene load_steps=3 format=3 uid="uid://dgxop0imhvyjq"]
 
 [ext_resource type="Script" uid="uid://cqjgbfhn4yn7n" path="res://Scripts/ship_builder.gd" id="1_nkq13"]
+[ext_resource type="SpriteFrames" uid="uid://diro5gqcqnbut" path="res://Animations/ShipBuilder.tres" id="2_kh5wr"]
 
 [node name="ShipBuilder" type="Node2D"]
 script = ExtResource("1_nkq13")
+
+[node name="Background_AS2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 576)
+sprite_frames = ExtResource("2_kh5wr")
