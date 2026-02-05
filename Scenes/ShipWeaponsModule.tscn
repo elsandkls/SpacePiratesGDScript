@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cby1o2wgbv413"]
+
+[ext_resource type="Script" uid="uid://djuvkfn87w61b" path="res://Scripts/ship_weapons_module.gd" id="1_uerim"]
+
+[node name="ShipWeaponsModule" type="Node2D"]
+script = ExtResource("1_uerim")
