@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c42mj8oyq0cp6"]
+
+[ext_resource type="Script" uid="uid://sh2j4r7h7o3e" path="res://Scripts/hud_space_station.gd" id="1_gmpcs"]
+
+[node name="HudSpaceStation" type="Node2D"]
+script = ExtResource("1_gmpcs")
