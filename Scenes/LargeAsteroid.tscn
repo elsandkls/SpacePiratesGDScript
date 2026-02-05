@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtawh1mixrea1"]
+[gd_scene load_steps=3 format=3 uid="uid://dtawh1mixrea1"]
 
 [ext_resource type="Script" uid="uid://dfpgplt0yr1td" path="res://Scripts/large_asteroid.gd" id="1_pbsf1"]
+[ext_resource type="SpriteFrames" uid="uid://cu1trrd7w823a" path="res://Animations/LargeAsteroid.tres" id="2_7ffpu"]
 
 [node name="LargeAsteroid" type="Node2D"]
 script = ExtResource("1_pbsf1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_7ffpu")
