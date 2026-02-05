@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvdwrss7ojrql"]
+[gd_scene load_steps=3 format=3 uid="uid://cvdwrss7ojrql"]
 
 [ext_resource type="Script" uid="uid://kaym8u0kiglo" path="res://Scripts/pirate_base.gd" id="1_0nx0j"]
+[ext_resource type="SpriteFrames" uid="uid://dofhm73i2cxat" path="res://Animations/PirateBase.tres" id="2_xc27v"]
 
 [node name="PirateBase" type="Node2D"]
 script = ExtResource("1_0nx0j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_xc27v")
