@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtawh1mixrea1"]
+
+[ext_resource type="Script" uid="uid://dfpgplt0yr1td" path="res://Scripts/large_asteroid.gd" id="1_pbsf1"]
+
+[node name="LargeAsteroid" type="Node2D"]
+script = ExtResource("1_pbsf1")
