@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djp0jdhk5db01"]
+
+[ext_resource type="Script" uid="uid://d2ysj5gr2qx3s" path="res://Scripts/large_planet.gd" id="1_kwut5"]
+
+[node name="LargePlanet" type="Node2D"]
+script = ExtResource("1_kwut5")
