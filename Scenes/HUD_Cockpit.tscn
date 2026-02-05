@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx4nvo8r4nlgo"]
+
+[ext_resource type="Script" uid="uid://bkr84nw6uqqd1" path="res://Scripts/hud_cockpit.gd" id="1_jh8pq"]
+
+[node name="HudCockpit" type="Node2D"]
+script = ExtResource("1_jh8pq")
