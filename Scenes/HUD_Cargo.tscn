@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg6uqs207kb3i"]
+
+[ext_resource type="Script" uid="uid://dakh2hdlsdxaw" path="res://Scripts/hud_cargo.gd" id="1_qrj1t"]
+
+[node name="HudCargo" type="Node2D"]
+script = ExtResource("1_qrj1t")
