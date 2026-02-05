@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvmo0wjvridja"]
+
+[ext_resource type="Script" uid="uid://vfwkitdb17hq" path="res://Scripts/ship_cockpit_module.gd" id="1_1ymqf"]
+
+[node name="ShipCockpitModule" type="Node2D"]
+script = ExtResource("1_1ymqf")
