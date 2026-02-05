@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dudjgquwdik20"]
+
+[ext_resource type="Script" uid="uid://d1woif0t8gav3" path="res://Scripts/hud_solar_system.gd" id="1_tgrcu"]
+
+[node name="HudSolarSystem" type="Node2D"]
+script = ExtResource("1_tgrcu")
