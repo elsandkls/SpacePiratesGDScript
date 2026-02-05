@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c87g332ucrt53"]
+[gd_scene load_steps=3 format=3 uid="uid://c87g332ucrt53"]
 
 [ext_resource type="Script" uid="uid://brdhru08xs8ap" path="res://Scripts/asteroid_belt.gd" id="1_ki71m"]
+[ext_resource type="SpriteFrames" uid="uid://dinyfo70nboo5" path="res://Animations/AsteroidBelt.tres" id="2_57tvl"]
 
 [node name="AsteroidBelt" type="Node2D"]
 script = ExtResource("1_ki71m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 576)
+sprite_frames = ExtResource("2_57tvl")
