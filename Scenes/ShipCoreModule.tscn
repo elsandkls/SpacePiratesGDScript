@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgitqrinljvpk"]
+[gd_scene load_steps=3 format=3 uid="uid://bgitqrinljvpk"]
 
 [ext_resource type="Script" uid="uid://d3doemw7yapw4" path="res://Scripts/ship_core_module.gd" id="1_ii40a"]
+[ext_resource type="SpriteFrames" uid="uid://hh7kumxm6mha" path="res://Animations/ShipCoreModule.tres" id="2_o7f3e"]
 
 [node name="ShipCoreModule" type="Node2D"]
 script = ExtResource("1_ii40a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_o7f3e")
