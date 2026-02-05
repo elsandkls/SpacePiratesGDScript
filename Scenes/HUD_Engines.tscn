@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jrdmp6du1m5g"]
+
+[ext_resource type="Script" uid="uid://gygevbiauwfb" path="res://Scripts/hud_engines.gd" id="1_a7jf7"]
+
+[node name="HudEngines" type="Node2D"]
+script = ExtResource("1_a7jf7")
