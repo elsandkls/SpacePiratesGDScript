@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bb05mma3fbw4l"]
+
+[node name="HudShipBuilder" type="Node2D"]
