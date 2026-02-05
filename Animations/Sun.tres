@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cchdsqk3tcx3n"]
+
+[ext_resource type="Texture2D" uid="uid://b73lcs1njm14y" path="res://Animations/ArtAssets/Sun.png" id="1_vfqoh"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vfqoh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
