@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dudjgquwdik20"]
+
+[ext_resource type="Script" uid="uid://d1woif0t8gav3" path="res://HUDS/Scripts/hud_solar_system.gd" id="1_tgrcu"]
+[ext_resource type="SpriteFrames" uid="uid://p3jju66a0cc6" path="res://HUDS/Animations/HUD_SolarSystem.tres" id="2_wc8e7"]
+
+[node name="HudSolarSystem" type="Node2D"]
+script = ExtResource("1_tgrcu")
+
+[node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_wc8e7")

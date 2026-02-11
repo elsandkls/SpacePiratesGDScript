@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://423e2j1uj313"]
+
+[ext_resource type="SpriteFrames" uid="uid://c4i7usda4fo4d" path="res://Player/Player.tres" id="1_rpqav"]
+
+[node name="Player" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_rpqav")
+autoplay = "default"

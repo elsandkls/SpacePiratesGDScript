@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dinyfo70nboo5"]
+
+[ext_resource type="Texture2D" uid="uid://bycesfonbhb7i" path="res://Animations/ArtAssets/Background_Black_Space.png" id="1_rc7gq"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rc7gq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cniykdrrvxvok"]
+
+[ext_resource type="Script" uid="uid://v3yk2p1awpma" path="res://Menus/Scripts/settings_menu.gd" id="1_8uw7q"]
+[ext_resource type="SpriteFrames" uid="uid://cb3qhj10gx73f" path="res://Menus/Animation/Menu_Animated_Background.tres" id="2_bxjf0"]
+[ext_resource type="PackedScene" uid="uid://b2t1nf3mwfl63" path="res://Buttons/Scenes/MainMenuButton.tscn" id="3_kksoj"]
+[ext_resource type="PackedScene" uid="uid://bnrnxmf2aab4u" path="res://Buttons/Scenes/ExitButton.tscn" id="4_g7w8i"]
+
+[node name="SettingsMenu" type="Node2D"]
+script = ExtResource("1_8uw7q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 576)
+sprite_frames = ExtResource("2_bxjf0")
+
+[node name="MainMenuButton" parent="." instance=ExtResource("3_kksoj")]
+position = Vector2(20, 1085)
+
+[node name="ExitButton" parent="." instance=ExtResource("4_g7w8i")]
+position = Vector2(985, 1085)

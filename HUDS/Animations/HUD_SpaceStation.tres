@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://t1txp5qt2dye"]
+
+[ext_resource type="Texture2D" uid="uid://x6c42o575yb5" path="res://HUDS/SpaceStationHuds.png" id="1_hjm2f"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hjm2f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

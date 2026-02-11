@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://hh7kumxm6mha"]
+
+[ext_resource type="Texture2D" uid="uid://b100arx84pkd7" path="res://Animations/ArtAssets/ShipCore.png" id="1_l3wf7"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l3wf7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx4nvo8r4nlgo"]
+
+[ext_resource type="Script" uid="uid://bkr84nw6uqqd1" path="res://HUDS/Scripts/hud_cockpit.gd" id="1_jh8pq"]
+[ext_resource type="SpriteFrames" uid="uid://caoukxcnipv1x" path="res://HUDS/Animations/HUD_Cockpit.tres" id="2_gjd1p"]
+[ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://HUDS/ArtAssets/UnderBar.png" id="3_txeyl"]
+[ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://HUDS/ArtAssets/OverBar.png" id="4_ra2ba"]
+[ext_resource type="Texture2D" uid="uid://digr0dmc82gh5" path="res://HUDS/ArtAssets/ProgressBar.png" id="5_yhwy5"]
+
+[node name="HudCockpit" type="Node2D"]
+script = ExtResource("1_jh8pq")
+
+[node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_gjd1p")
+
+[node name="AnimatedSprite2D_ICON" type="AnimatedSprite2D" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_top = -89.0
+offset_right = 53.0
+offset_bottom = 101.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("3_txeyl")
+texture_over = ExtResource("4_ra2ba")
+texture_progress = ExtResource("5_yhwy5")

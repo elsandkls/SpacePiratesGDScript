@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb05mma3fbw4l"]
-
-[ext_resource type="Script" uid="uid://pcif36v0ny3a" path="res://Scripts/hud_ship_builder.gd" id="1_g6emu"]
-
-[node name="HudShipBuilder" type="Node2D"]
-script = ExtResource("1_g6emu")

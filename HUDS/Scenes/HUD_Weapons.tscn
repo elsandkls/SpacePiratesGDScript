@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci367hv2ua7ep"]
+
+[ext_resource type="Script" uid="uid://owpvyxqgd7p" path="res://HUDS/Scripts/hud_weapons.gd" id="1_8bsn6"]
+[ext_resource type="SpriteFrames" uid="uid://cxjm46nalijdw" path="res://HUDS/Animations/HUD_Weapons.tres" id="2_eyr03"]
+[ext_resource type="SpriteFrames" uid="uid://dj3ybhpqcqmis" path="res://HUDS/Scenes/ICONS/HUD_Weapons_ICON_Base.tres" id="3_7yl44"]
+[ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://HUDS/ArtAssets/UnderBar.png" id="4_a74fw"]
+[ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://HUDS/ArtAssets/OverBar.png" id="5_qlu7v"]
+[ext_resource type="Texture2D" uid="uid://digr0dmc82gh5" path="res://HUDS/ArtAssets/ProgressBar.png" id="6_qdbh6"]
+
+[node name="HudWeapons" type="Node2D"]
+script = ExtResource("1_8bsn6")
+
+[node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_eyr03")
+
+[node name="AnimatedSprite2D_ICON" type="AnimatedSprite2D" parent="."]
+position = Vector2(-54.25, 1.75)
+scale = Vector2(1.42, 2.14)
+sprite_frames = ExtResource("3_7yl44")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 13.0
+offset_top = -94.0
+offset_right = 80.0
+offset_bottom = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("4_a74fw")
+texture_over = ExtResource("5_qlu7v")
+texture_progress = ExtResource("6_qdbh6")

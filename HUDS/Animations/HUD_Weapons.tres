@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cxjm46nalijdw"]
+
+[ext_resource type="Texture2D" uid="uid://qdnn7mt8wusp" path="res://HUDS/WeaponsHuds.png" id="1_x5iy5"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x5iy5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://p3jju66a0cc6"]
+
+[ext_resource type="Texture2D" uid="uid://cpa4j77nvrtp6" path="res://HUDS/SolarSystemHuds.png" id="1_1mdgb"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1mdgb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

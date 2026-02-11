@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c42mj8oyq0cp6"]
+
+[ext_resource type="Script" uid="uid://sh2j4r7h7o3e" path="res://HUDS/Scripts/hud_space_station.gd" id="1_gmpcs"]
+[ext_resource type="SpriteFrames" uid="uid://t1txp5qt2dye" path="res://HUDS/Animations/HUD_SpaceStation.tres" id="2_1wcgg"]
+[ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://HUDS/ArtAssets/UnderBar.png" id="3_e044n"]
+[ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://HUDS/ArtAssets/OverBar.png" id="4_kt8s4"]
+[ext_resource type="Texture2D" uid="uid://digr0dmc82gh5" path="res://HUDS/ArtAssets/ProgressBar.png" id="5_nuj23"]
+
+[node name="HudSpaceStation" type="Node2D"]
+script = ExtResource("1_gmpcs")
+
+[node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_1wcgg")
+
+[node name="AnimatedSprite2D_ICON" type="AnimatedSprite2D" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_top = -93.0
+offset_right = 62.0
+offset_bottom = 101.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("3_e044n")
+texture_over = ExtResource("4_kt8s4")
+texture_progress = ExtResource("5_nuj23")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs6gomwmtscpg"]
+
+[ext_resource type="Script" uid="uid://cnjlurkoh4mmo" path="res://HUDS/Scripts/hud_asteroid_belt.gd" id="1_sdfsj"]
+[ext_resource type="SpriteFrames" uid="uid://dbbei4osp4vmj" path="res://HUDS/Animations/HUD_AsteroidBelt.tres" id="2_imfpi"]
+
+[node name="HudAsteroidBelt" type="Node2D"]
+script = ExtResource("1_sdfsj")
+
+[node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_imfpi")
