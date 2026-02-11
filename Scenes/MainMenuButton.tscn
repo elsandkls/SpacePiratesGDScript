@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2t1nf3mwfl63"]
+
+[ext_resource type="Texture2D" uid="uid://cpkuqjfmsx2yf" path="res://Buttons/placeholder_button_120_60_Normal.png" id="1_fpgug"]
+[ext_resource type="Texture2D" uid="uid://2cve1dxuse5l" path="res://Buttons/placeholder_button_120_60_Pressed.png" id="2_i06t2"]
+[ext_resource type="Texture2D" uid="uid://c8egf8u4x8nsv" path="res://Buttons/placeholder_button_120_60_Hover.png" id="3_rdu7t"]
+[ext_resource type="Texture2D" uid="uid://dsne2f40fhjof" path="res://Buttons/placeholder_button_120_60_Disabled.png" id="4_expg0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(150, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_fpgug")
+texture_pressed = ExtResource("2_i06t2")
+texture_hover = ExtResource("3_rdu7t")
+texture_disabled = ExtResource("4_expg0")
+texture_focused = ExtResource("2_i06t2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(150, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Menu"
+scroll_active = false
+horizontal_alignment = 1

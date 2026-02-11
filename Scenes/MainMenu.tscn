@@ -12,3 +12,4 @@ position = Vector2(576, 576)
 sprite_frames = ExtResource("2_853f1")
 
 [node name="ExitButton" parent="." instance=ExtResource("3_8saeu")]
+position = Vector2(985, 1085)

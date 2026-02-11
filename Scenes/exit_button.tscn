@@ -28,3 +28,5 @@ theme_override_font_sizes/normal_font_size = 36
 text = "EXIT"
 scroll_active = false
 horizontal_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
