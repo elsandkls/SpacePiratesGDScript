@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://b2t1nf3mwfl63"]
+[gd_scene load_steps=8 format=3 uid="uid://b2t1nf3mwfl63"]
+
+[ext_resource type="SpriteFrames" uid="uid://cb3qhj10gx73f" path="res://Animations/Menu_Animated_Background.tres" id="1_cualn"]
+[ext_resource type="Texture2D" uid="uid://cpkuqjfmsx2yf" path="res://Buttons/placeholder_button_120_60_Normal.png" id="2_oht3g"]
+[ext_resource type="Texture2D" uid="uid://2cve1dxuse5l" path="res://Buttons/placeholder_button_120_60_Pressed.png" id="3_phxia"]
+[ext_resource type="Texture2D" uid="uid://c8egf8u4x8nsv" path="res://Buttons/placeholder_button_120_60_Hover.png" id="4_h523h"]
+[ext_resource type="Texture2D" uid="uid://dsne2f40fhjof" path="res://Buttons/placeholder_button_120_60_Disabled.png" id="5_0nx5s"]
+[ext_resource type="Theme" uid="uid://6gaj0f04x05x" path="res://Scenes/button.tres" id="6_0fg5u"]
+[ext_resource type="PackedScene" uid="uid://bnrnxmf2aab4u" path="res://Scenes/exit_button.tscn" id="7_hsq31"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 576)
+sprite_frames = ExtResource("1_cualn")
+
+[node name="AnimatedSprite2D_LOGO" type="AnimatedSprite2D" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(150, 50)
+offset_left = 380.0
+offset_top = 747.0
+offset_right = 815.0
+offset_bottom = 857.0
+texture_normal = ExtResource("2_oht3g")
+texture_pressed = ExtResource("3_phxia")
+texture_hover = ExtResource("4_h523h")
+texture_disabled = ExtResource("5_0nx5s")
+texture_focused = ExtResource("4_h523h")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 0
+offset_right = 428.0
+offset_bottom = 110.0
+theme = ExtResource("6_0fg5u")
+theme_override_font_sizes/normal_font_size = 75
+text = "START"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Node2D" parent="." instance=ExtResource("7_hsq31")]
+position = Vector2(992, 1083)
