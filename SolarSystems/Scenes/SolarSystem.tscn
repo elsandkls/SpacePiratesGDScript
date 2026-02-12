@@ -1,20 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj5mk5fv6sodg"]
+[gd_scene load_steps=7 format=3 uid="uid://cj5mk5fv6sodg"]
 
-[ext_resource type="Script" uid="uid://corgt3x7cfvk5" path="res://Scripts/solar_system.gd" id="1_b5bxd"]
-[ext_resource type="SpriteFrames" uid="uid://cby3uf30djpac" path="res://Animations/SolarSystem_Background.tres" id="2_cbov7"]
-[ext_resource type="PackedScene" uid="uid://cerqncchx7vx1" path="res://Scenes/Sun.tscn" id="3_y8468"]
-[ext_resource type="PackedScene" uid="uid://djp0jdhk5db01" path="res://Scenes/LargePlanet.tscn" id="4_u8frv"]
+[ext_resource type="Script" uid="uid://corgt3x7cfvk5" path="res://SolarSystems/Scripts/solar_system.gd" id="1_b5bxd"]
+[ext_resource type="SpriteFrames" uid="uid://cby3uf30djpac" path="res://SolarSystems/Animations/SolarSystem_Background.tres" id="2_cbov7"]
+[ext_resource type="PackedScene" uid="uid://cerqncchx7vx1" path="res://Suns/Scenes/Sun.tscn" id="3_y8468"]
+[ext_resource type="PackedScene" uid="uid://djp0jdhk5db01" path="res://Planets/Scenes/LargePlanet.tscn" id="4_u8frv"]
+[ext_resource type="PackedScene" uid="uid://b3x4eu0mjcklc" path="res://SpaceStations/Scenes/SpaceStation.tscn" id="5_cb31a"]
+[ext_resource type="PackedScene" uid="uid://423e2j1uj313" path="res://Player/Scenes/Player.tscn" id="6_rsn87"]
 
 [node name="SolarSystem" type="Node2D"]
 script = ExtResource("1_b5bxd")
 
 [node name="Background_AS2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 576)
+position = Vector2(602, 576)
 sprite_frames = ExtResource("2_cbov7")
 autoplay = "default"
 
 [node name="Sun" parent="." instance=ExtResource("3_y8468")]
-position = Vector2(576, 576)
+position = Vector2(377, 391)
 
 [node name="LargePlanet" parent="." instance=ExtResource("4_u8frv")]
-position = Vector2(750, 750)
+position = Vector2(561, 661)
+
+[node name="SpaceStation" parent="." instance=ExtResource("5_cb31a")]
+position = Vector2(640, 738)
+scale = Vector2(0.2, 0.2)
+
+[node name="Player" parent="." instance=ExtResource("6_rsn87")]
+position = Vector2(153, 1030)
+scale = Vector2(0.2, 0.2)

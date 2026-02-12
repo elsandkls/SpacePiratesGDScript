@@ -1,3 +1,243 @@
-[gd_scene format=3 uid="uid://11vbl0jm8hob"]
+[gd_scene load_steps=9 format=3 uid="uid://11vbl0jm8hob"]
+
+[ext_resource type="SpriteFrames" uid="uid://cby3uf30djpac" path="res://SolarSystems/Animations/SolarSystem_Background.tres" id="1_f3hyu"]
+[ext_resource type="PackedScene" uid="uid://bnrnxmf2aab4u" path="res://Buttons/Scenes/ExitButton.tscn" id="2_tfe24"]
+[ext_resource type="PackedScene" uid="uid://b2t1nf3mwfl63" path="res://Buttons/Scenes/MainMenuButton.tscn" id="3_65ekb"]
+[ext_resource type="SpriteFrames" uid="uid://bin6tgbj0yae5" path="res://SolarSystems/Scenes/AnimatedSprite2D_System01.tres" id="4_1d55i"]
+[ext_resource type="SpriteFrames" uid="uid://bx3c1bpadmg7h" path="res://SolarSystems/Scenes/AnimatedSprite2D_System02.tres" id="5_6yk68"]
+[ext_resource type="SpriteFrames" uid="uid://ci2fngd7dh82v" path="res://SolarSystems/Scenes/UnscannedSquare.tres" id="6_6yk68"]
+[ext_resource type="SpriteFrames" uid="uid://0lixnbf3yug6" path="res://SolarSystems/Scenes/AnimatedSprite2D_System03.tres" id="6_65hhg"]
+[ext_resource type="SpriteFrames" uid="uid://1def5rfbmgmf" path="res://SolarSystems/Scenes/AnimatedSprite2D_SystemEmpty.tres" id="7_p7330"]
 
 [node name="UniverseMap" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(579, 579)
+sprite_frames = ExtResource("1_f3hyu")
+
+[node name="ExitButton" parent="." instance=ExtResource("2_tfe24")]
+position = Vector2(985, 1085)
+
+[node name="MainMenuButton" parent="." instance=ExtResource("3_65ekb")]
+position = Vector2(20, 1085)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(920, 920)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 116.0
+offset_top = 116.0
+offset_right = 1048.0
+offset_bottom = 1048.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="BoxContainer1" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_System01" type="AnimatedSprite2D" parent="GridContainer/BoxContainer1"]
+position = Vector2(115, 115)
+sprite_frames = ExtResource("4_1d55i")
+
+[node name="BoxContainer2" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer2"]
+visible = false
+position = Vector2(115, 115)
+scale = Vector2(1.08, 1)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer2"]
+position = Vector2(115, 115)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer3" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer3"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer3"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer4" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer4"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer4"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer5" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer5"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer5"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer6" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_System03" type="AnimatedSprite2D" parent="GridContainer/BoxContainer6"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("6_65hhg")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer6"]
+position = Vector2(115, 115)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer7" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer7"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer7"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer8" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer8"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer8"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer9" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer9"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer9"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer10" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer10"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer10"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer11" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer11"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer11"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer12" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer12"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer12"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer13" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer13"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer13"]
+position = Vector2(115, 115)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer14" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer14"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer14"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer15" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer15"]
+visible = false
+position = Vector2(115.07, 115)
+sprite_frames = ExtResource("7_p7330")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer15"]
+position = Vector2(115.07, 115.07)
+sprite_frames = ExtResource("6_6yk68")
+
+[node name="BoxContainer16" type="BoxContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_System02" type="AnimatedSprite2D" parent="GridContainer/BoxContainer16"]
+visible = false
+position = Vector2(115, 115)
+sprite_frames = ExtResource("5_6yk68")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer16"]
+position = Vector2(115, 115)
+sprite_frames = ExtResource("6_6yk68")

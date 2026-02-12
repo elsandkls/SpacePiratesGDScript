@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://1def5rfbmgmf"]
+
+[ext_resource type="Texture2D" uid="uid://effkk7dth6i" path="res://SolarSystems/ArtAssets/Menu_Background.png" id="1_o3gxx"]
+[ext_resource type="Texture2D" uid="uid://dkg6jy4ykaq51" path="res://SolarSystems/ArtAssets/Menu_Background_01.png" id="2_g8kci"]
+[ext_resource type="Texture2D" uid="uid://c6stvldd0vsk0" path="res://SolarSystems/ArtAssets/Menu_Background_02.png" id="3_6o478"]
+[ext_resource type="Texture2D" uid="uid://b7qstyq0uehe8" path="res://SolarSystems/ArtAssets/Menu_Background_03.png" id="4_frpmr"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o3gxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g8kci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6o478")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_frpmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6o478")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g8kci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_o3gxx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

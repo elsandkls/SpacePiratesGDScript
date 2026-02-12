@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://0lixnbf3yug6"]
+
+[ext_resource type="Texture2D" uid="uid://k8ylw5nuloxi" path="res://SolarSystems/ArtAssets/SolarSystemMapSlice_03.png" id="1_ielhl"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ielhl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
