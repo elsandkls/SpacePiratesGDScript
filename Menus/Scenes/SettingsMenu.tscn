@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cniykdrrvxvok"]
+[gd_scene load_steps=7 format=3 uid="uid://cniykdrrvxvok"]
 
 [ext_resource type="Script" uid="uid://v3yk2p1awpma" path="res://Menus/Scripts/settings_menu.gd" id="1_8uw7q"]
 [ext_resource type="SpriteFrames" uid="uid://cb3qhj10gx73f" path="res://Menus/Animation/Menu_Animated_Background.tres" id="2_bxjf0"]
 [ext_resource type="PackedScene" uid="uid://b2t1nf3mwfl63" path="res://Buttons/Scenes/MainMenuButton.tscn" id="3_kksoj"]
 [ext_resource type="PackedScene" uid="uid://bnrnxmf2aab4u" path="res://Buttons/Scenes/ExitButton.tscn" id="4_g7w8i"]
+[ext_resource type="Texture2D" uid="uid://bjrovi4cqfgos" path="res://Menus/ArtAssets/english_flag_icon.png" id="5_oqse0"]
+[ext_resource type="Texture2D" uid="uid://d2wecl53fip8u" path="res://Menus/ArtAssets/spanish_flag_icon.png" id="6_ctw8j"]
 
 [node name="SettingsMenu" type="Node2D"]
 script = ExtResource("1_8uw7q")
@@ -17,3 +19,78 @@ position = Vector2(20, 1085)
 
 [node name="ExitButton" parent="." instance=ExtResource("4_g7w8i")]
 position = Vector2(985, 1085)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 283.0
+offset_top = 180.0
+offset_right = 886.0
+offset_bottom = 860.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 36
+text = "Language"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/icon = ExtResource("5_oqse0")
+popup/item_0/id = 0
+popup/item_1/text = "Spanish"
+popup/item_1/icon = ExtResource("6_ctw8j")
+popup/item_1/id = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 36
+text = "Sounds"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+text = "ON/OFF"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 36
+text = "Music"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+text = "ON/OFF"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer2/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]
