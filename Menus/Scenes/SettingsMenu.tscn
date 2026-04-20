@@ -11,19 +11,19 @@
 script = ExtResource("1_8uw7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 576)
 sprite_frames = ExtResource("2_bxjf0")
+centered = false
 
 [node name="MainMenuButton" parent="." instance=ExtResource("3_kksoj")]
-position = Vector2(20, 920)
+position = Vector2(1600, 11)
 
 [node name="ExitButton" parent="." instance=ExtResource("4_g7w8i")]
-position = Vector2(820, 920)
+position = Vector2(1600, 75)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 283.0
+offset_left = 700.0
 offset_top = 180.0
-offset_right = 886.0
+offset_right = 1303.0
 offset_bottom = 860.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]

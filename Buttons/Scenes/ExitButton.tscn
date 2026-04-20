@@ -6,14 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dsne2f40fhjof" path="res://Buttons/ArtAssets/placeholder_button_120_60_Disabled.png" id="4_q0gr6"]
 [ext_resource type="Script" uid="uid://cpfpe82cqglpw" path="res://Buttons/Scripts/exit_button.gd" id="5_cs8ew"]
 
-[node name="Node2D" type="Node2D"]
+[node name="ExitButton" type="Node2D"]
 script = ExtResource("5_cs8ew")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(150, 50)
 offset_right = 150.0
 offset_bottom = 50.0
-mouse_filter = 1
 texture_normal = ExtResource("1_4uncf")
 texture_pressed = ExtResource("2_cs8ew")
 texture_hover = ExtResource("3_5igkq")

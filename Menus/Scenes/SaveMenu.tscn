@@ -9,11 +9,12 @@
 script = ExtResource("1_8yryr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 576)
+scale = Vector2(1, 0.9348958)
 sprite_frames = ExtResource("2_1cea0")
+centered = false
 
 [node name="Exit Button" parent="." instance=ExtResource("3_cikoy")]
-position = Vector2(820, 920)
+position = Vector2(1600, 80)
 
 [node name="Menu Button" parent="." instance=ExtResource("4_h11ql")]
-position = Vector2(20, 920)
+position = Vector2(1600, 12)

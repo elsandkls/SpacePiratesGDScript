@@ -13,15 +13,15 @@
 script = ExtResource("1_dvnd1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 576)
 sprite_frames = ExtResource("2_xtte2")
 autoplay = "default"
+centered = false
 
 [node name="StartButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(150, 50)
-offset_left = 300.0
+offset_left = 700.0
 offset_top = 400.0
-offset_right = 700.0
+offset_right = 1100.0
 offset_bottom = 500.0
 texture_normal = ExtResource("3_dibtv")
 texture_pressed = ExtResource("4_o6asp")
@@ -34,8 +34,8 @@ stretch_mode = 0
 [node name="RichTextLabel" type="RichTextLabel" parent="StartButton"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 0
-offset_right = 428.0
-offset_bottom = 110.0
+offset_right = 397.0
+offset_bottom = 98.0
 mouse_filter = 1
 theme = ExtResource("7_b3loq")
 theme_override_font_sizes/normal_font_size = 75
@@ -44,6 +44,6 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Exit Button" parent="." instance=ExtResource("9_o42a4")]
-position = Vector2(820, 920)
+position = Vector2(1600, 15)
 
 [connection signal="pressed" from="StartButton" to="." method="_start_button_pressed"]

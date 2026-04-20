@@ -13,6 +13,7 @@ script = ExtResource("1_4s8yr")
 custom_minimum_size = Vector2(150, 50)
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 texture_normal = ExtResource("1_fpgug")
 texture_pressed = ExtResource("2_i06t2")
 texture_hover = ExtResource("3_rdu7t")

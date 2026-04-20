@@ -12,21 +12,21 @@
 script = ExtResource("1_tt5f1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 576)
 sprite_frames = ExtResource("2_853f1")
+centered = false
 
 [node name="ExitButton" parent="." instance=ExtResource("3_8saeu")]
-position = Vector2(820, 920)
+position = Vector2(1600, 15)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(200, 200)
-offset_left = 465.0
+offset_left = 700.0
 offset_top = 328.0
-offset_right = 672.0
+offset_right = 950.0
 offset_bottom = 653.0
 
 [node name="StartGameButton" type="TextureButton" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 texture_normal = ExtResource("4_a367j")
 texture_pressed = ExtResource("5_cg3l7")
@@ -39,16 +39,19 @@ stretch_mode = 0
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/StartGameButton"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 246.0
+offset_bottom = 52.0
 mouse_filter = 1
-theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/normal_font_size = 30
 text = "START GAME"
 scroll_active = false
+shortcut_keys_enabled = false
 horizontal_alignment = 1
 
 [node name="ShipBuilderButton" type="TextureButton" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 texture_normal = ExtResource("4_a367j")
 texture_pressed = ExtResource("5_cg3l7")
@@ -61,16 +64,19 @@ stretch_mode = 0
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ShipBuilderButton"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 247.0
+offset_bottom = 53.0
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "SHIP BUILDER"
 scroll_active = false
+shortcut_keys_enabled = false
 horizontal_alignment = 1
 
 [node name="SaveGameButton" type="TextureButton" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 texture_normal = ExtResource("4_a367j")
 texture_pressed = ExtResource("5_cg3l7")
@@ -83,8 +89,9 @@ stretch_mode = 0
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/SaveGameButton"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 4.0
+offset_right = 246.0
+offset_bottom = 50.0
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "SAVE GAME"
@@ -92,7 +99,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="SettingsButton" type="TextureButton" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 texture_normal = ExtResource("4_a367j")
 texture_pressed = ExtResource("5_cg3l7")
@@ -105,8 +112,10 @@ stretch_mode = 0
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/SettingsButton"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 247.0
+offset_bottom = 49.0
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 30
 text = "SETTINGS"
