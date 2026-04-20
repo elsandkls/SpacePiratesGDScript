@@ -11,9 +11,9 @@
 script = ExtResource("1_2jc5t")
 
 [node name="Background_AS2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(602, 576)
 sprite_frames = ExtResource("2_i8evy")
 autoplay = "default"
+centered = false
 
 [node name="Sun" parent="." instance=ExtResource("3_p3bqm")]
 position = Vector2(377, 391)
@@ -26,5 +26,5 @@ position = Vector2(640, 738)
 scale = Vector2(0.2, 0.2)
 
 [node name="Player" parent="." instance=ExtResource("6_qvvw7")]
-position = Vector2(153, 1030)
+position = Vector2(640.99994, 964)
 scale = Vector2(0.2, 0.2)
