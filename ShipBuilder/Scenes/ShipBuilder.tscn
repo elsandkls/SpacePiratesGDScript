@@ -85,21 +85,21 @@ animations = [{
 script = ExtResource("1_nkq13")
 
 [node name="Background_AS2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 576)
 sprite_frames = ExtResource("2_kh5wr")
 autoplay = "default"
+centered = false
 
 [node name="Menu Button" parent="." instance=ExtResource("4_xl84e")]
 z_index = 99
-position = Vector2(20, 920)
+position = Vector2(1600, 11)
 
 [node name="TextureButton_Save" type="TextureButton" parent="."]
 z_index = 99
 custom_minimum_size = Vector2(150, 50)
-offset_left = 430.0
-offset_top = 920.0
-offset_right = 580.0
-offset_bottom = 970.0
+offset_left = 1600.0
+offset_top = 73.0
+offset_right = 1750.0
+offset_bottom = 123.0
 texture_normal = ExtResource("4_8wpb1")
 texture_pressed = ExtResource("5_ranl5")
 texture_hover = ExtResource("6_ckbgw")
@@ -111,8 +111,9 @@ stretch_mode = 0
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureButton_Save"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 3.0
+offset_right = 153.0
+offset_bottom = 50.0
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 36
 text = "SAVE"
@@ -121,126 +122,15 @@ horizontal_alignment = 1
 
 [node name="Exit Button" parent="." instance=ExtResource("3_c3g04")]
 z_index = 99
-position = Vector2(820, 920)
-
-[node name="GridContainer" type="GridContainer" parent="."]
-custom_minimum_size = Vector2(576, 576)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 115.0
-offset_top = 116.0
-offset_right = 891.0
-offset_bottom = 892.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 3
-
-[node name="BoxContainer" type="BoxContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-
-[node name="AnimatedSprite2D_EMPTY" type="AnimatedSprite2D" parent="GridContainer/BoxContainer"]
-position = Vector2(128, 128)
-sprite_frames = ExtResource("5_enoyl")
-
-[node name="BoxContainer_TOP" type="BoxContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-
-[node name="AnimatedSprite2D_TOP_USABLE" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_TOP"]
-position = Vector2(128, 128)
-sprite_frames = ExtResource("7_ld43k")
-
-[node name="AnimatedSprite2D_TOP" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_TOP"]
-visible = false
-position = Vector2(128, 128)
-sprite_frames = ExtResource("6_hu148")
-
-[node name="BoxContainer3" type="BoxContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-
-[node name="AnimatedSprite2D_EMPTY" type="AnimatedSprite2D" parent="GridContainer/BoxContainer3"]
-position = Vector2(128, 128)
-sprite_frames = ExtResource("5_enoyl")
-
-[node name="BoxContainer_LEFT" type="BoxContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-
-[node name="AnimatedSprite2D_LEFT_USABLE" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_LEFT"]
-position = Vector2(128, 128)
-sprite_frames = ExtResource("7_ld43k")
-
-[node name="AnimatedSprite2D_LEFT" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_LEFT"]
-visible = false
-position = Vector2(128, 128)
-sprite_frames = ExtResource("7_vkvx8")
-
-[node name="BoxContainer_CENTER" type="BoxContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-
-[node name="AnimatedSprite2D_CENTER_USABLE" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_CENTER"]
-position = Vector2(128, 128)
-sprite_frames = ExtResource("7_ld43k")
-
-[node name="AnimatedSprite2D_CENTER" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_CENTER"]
-visible = false
-position = Vector2(128, 128)
-sprite_frames = ExtResource("5_lxusv")
-
-[node name="BoxContainer_RIGHT" type="BoxContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-
-[node name="AnimatedSprite2D_RIGHT_USABLE" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_RIGHT"]
-position = Vector2(128, 128)
-sprite_frames = ExtResource("7_ld43k")
-
-[node name="AnimatedSprite2D_RIGHT" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_RIGHT"]
-visible = false
-position = Vector2(128, 128)
-sprite_frames = ExtResource("9_ld43k")
-
-[node name="BoxContainer7" type="BoxContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-
-[node name="AnimatedSprite2D_EMPTY" type="AnimatedSprite2D" parent="GridContainer/BoxContainer7"]
-position = Vector2(128, 128)
-sprite_frames = ExtResource("5_enoyl")
-
-[node name="BoxContainer_BOTTOM" type="BoxContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-
-[node name="AnimatedSprite2D_BOTTOM_USABLE" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_BOTTOM"]
-position = Vector2(128, 128)
-sprite_frames = ExtResource("7_ld43k")
-
-[node name="AnimatedSprite2D_BOTTOM" type="AnimatedSprite2D" parent="GridContainer/BoxContainer_BOTTOM"]
-visible = false
-position = Vector2(128, 128)
-sprite_frames = ExtResource("8_vkvx8")
-
-[node name="BoxContainer9" type="BoxContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(256, 256)
-layout_mode = 2
-
-[node name="AnimatedSprite2D_EMPTY" type="AnimatedSprite2D" parent="GridContainer/BoxContainer9"]
-position = Vector2(128, 128)
-sprite_frames = ExtResource("5_enoyl")
+position = Vector2(1600, 137)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 1149.0
+custom_minimum_size = Vector2(1500, 100)
+offset_right = 1500.0
 offset_bottom = 115.0
 
 [node name="BoxContainer" type="BoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(200, 115)
+custom_minimum_size = Vector2(400, 115)
 layout_mode = 2
 
 [node name="TextureButton_Core_CENTER" type="TextureButton" parent="HBoxContainer"]
@@ -321,6 +211,118 @@ sprite_frames = SubResource("SpriteFrames_jlrrj")
 [node name="BoxContainer2" type="BoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 115)
 layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1500, 800)
+offset_top = 120.0
+offset_right = 1500.0
+offset_bottom = 920.0
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(300, 800)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(576, 576)
+layout_mode = 2
+columns = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer2/GridContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_EMPTY" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer"]
+position = Vector2(128, 128)
+sprite_frames = ExtResource("5_enoyl")
+
+[node name="BoxContainer_TOP" type="BoxContainer" parent="HBoxContainer2/GridContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_TOP_USABLE" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_TOP"]
+position = Vector2(128, 128)
+sprite_frames = ExtResource("7_ld43k")
+
+[node name="AnimatedSprite2D_TOP" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_TOP"]
+visible = false
+position = Vector2(128, 128)
+sprite_frames = ExtResource("6_hu148")
+
+[node name="BoxContainer3" type="BoxContainer" parent="HBoxContainer2/GridContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_EMPTY" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer3"]
+position = Vector2(128, 128)
+sprite_frames = ExtResource("5_enoyl")
+
+[node name="BoxContainer_LEFT" type="BoxContainer" parent="HBoxContainer2/GridContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_LEFT_USABLE" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_LEFT"]
+position = Vector2(128, 128)
+sprite_frames = ExtResource("7_ld43k")
+
+[node name="AnimatedSprite2D_LEFT" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_LEFT"]
+visible = false
+position = Vector2(128, 128)
+sprite_frames = ExtResource("7_vkvx8")
+
+[node name="BoxContainer_CENTER" type="BoxContainer" parent="HBoxContainer2/GridContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_CENTER_USABLE" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_CENTER"]
+position = Vector2(128, 128)
+sprite_frames = ExtResource("7_ld43k")
+
+[node name="AnimatedSprite2D_CENTER" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_CENTER"]
+visible = false
+position = Vector2(128, 128)
+sprite_frames = ExtResource("5_lxusv")
+
+[node name="BoxContainer_RIGHT" type="BoxContainer" parent="HBoxContainer2/GridContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_RIGHT_USABLE" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_RIGHT"]
+position = Vector2(128, 128)
+sprite_frames = ExtResource("7_ld43k")
+
+[node name="AnimatedSprite2D_RIGHT" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_RIGHT"]
+visible = false
+position = Vector2(128, 128)
+sprite_frames = ExtResource("9_ld43k")
+
+[node name="BoxContainer7" type="BoxContainer" parent="HBoxContainer2/GridContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_EMPTY" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer7"]
+position = Vector2(128, 128)
+sprite_frames = ExtResource("5_enoyl")
+
+[node name="BoxContainer_BOTTOM" type="BoxContainer" parent="HBoxContainer2/GridContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_BOTTOM_USABLE" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_BOTTOM"]
+position = Vector2(128, 128)
+sprite_frames = ExtResource("7_ld43k")
+
+[node name="AnimatedSprite2D_BOTTOM" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer_BOTTOM"]
+visible = false
+position = Vector2(128, 128)
+sprite_frames = ExtResource("8_vkvx8")
+
+[node name="BoxContainer9" type="BoxContainer" parent="HBoxContainer2/GridContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="AnimatedSprite2D_EMPTY" type="AnimatedSprite2D" parent="HBoxContainer2/GridContainer/BoxContainer9"]
+position = Vector2(128, 128)
+sprite_frames = ExtResource("5_enoyl")
 
 [connection signal="pressed" from="TextureButton_Save" to="." method="_save_button_save_pressed"]
 [connection signal="pressed" from="HBoxContainer/TextureButton_Core_CENTER" to="." method="_core_button_core_pressed"]
