@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj5mk5fv6sodg"]
+
+[ext_resource type="Script" uid="uid://corgt3x7cfvk5" path="res://Resources/SolarSystems/Scripts/solar_system.gd" id="1_2jc5t"]
+[ext_resource type="SpriteFrames" uid="uid://cby3uf30djpac" path="res://Resources/SolarSystems/Animations/SolarSystem_Background.tres" id="2_i8evy"]
+[ext_resource type="PackedScene" uid="uid://cerqncchx7vx1" path="res://Resources/Suns/Scenes/Sun.tscn" id="3_p3bqm"]
+[ext_resource type="PackedScene" uid="uid://djp0jdhk5db01" path="res://Resources/Planets/Scenes/LargePlanet.tscn" id="4_ac3h8"]
+[ext_resource type="PackedScene" uid="uid://b3x4eu0mjcklc" path="res://Resources/SpaceStations/Scenes/SpaceStation.tscn" id="5_l5yb1"]
+[ext_resource type="PackedScene" uid="uid://423e2j1uj313" path="res://Resources/Player/Scenes/Player.tscn" id="6_qvvw7"]
+
+[node name="SolarSystem" type="Node2D"]
+script = ExtResource("1_2jc5t")
+
+[node name="Background_AS2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_i8evy")
+autoplay = "default"
+centered = false
+
+[node name="Sun" parent="." instance=ExtResource("3_p3bqm")]
+position = Vector2(377, 391)
+
+[node name="LargePlanet" parent="." instance=ExtResource("4_ac3h8")]
+position = Vector2(561, 661)
+
+[node name="SpaceStation" parent="." instance=ExtResource("5_l5yb1")]
+position = Vector2(640, 738)
+scale = Vector2(0.2, 0.2)
+
+[node name="Player" parent="." instance=ExtResource("6_qvvw7")]
+position = Vector2(640.99994, 964)
+scale = Vector2(0.2, 0.2)

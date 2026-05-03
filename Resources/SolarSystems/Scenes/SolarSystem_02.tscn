@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://br2myd7oybfrn"]
+
+[ext_resource type="SpriteFrames" uid="uid://cby3uf30djpac" path="res://Resources/SolarSystems/Animations/SolarSystem_Background.tres" id="1_1ccv6"]
+
+[node name="SolarSystem02" type="Node2D"]
+
+[node name="Background_AS2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(602, 537.5)
+scale = Vector2(1, 0.9331597)
+sprite_frames = ExtResource("1_1ccv6")
+autoplay = "default"

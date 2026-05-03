@@ -21,6 +21,10 @@ window/size/viewport_width=1800
 window/size/viewport_height=1000
 window/size/borderless=true
 
+[dotnet]
+
+project/assembly_name="SpacePiratesGD"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
