@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cby1o2wgbv413"]
 
-[ext_resource type="Script" uid="uid://djuvkfn87w61b" path="res://Resources/ShipModules/Scripts/ship_weapons_module.gd" id="1_uerim"]
+[ext_resource type="Script" uid="uid://djuvkfn87w61b" path="res://Resources/ShipModules/Scripts/ship_weapons_module.cs" id="1_uerim"]
 [ext_resource type="SpriteFrames" uid="uid://dpqrhrq7p1wbc" path="res://Resources/ShipModules/Animations/ShipWeaponsModule.tres" id="2_j0wgd"]
 
 [node name="ShipWeaponsModule" type="Node2D"]

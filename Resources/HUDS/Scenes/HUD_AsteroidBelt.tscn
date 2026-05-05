@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bs6gomwmtscpg"]
 
-[ext_resource type="Script" uid="uid://cnjlurkoh4mmo" path="res://Resources/HUDS/Scripts/hud_asteroid_belt.gd" id="1_sdfsj"]
+[ext_resource type="Script" uid="uid://cnjlurkoh4mmo" path="res://Resources/HUDS/Scripts/hud_asteroid_belt.cs" id="1_sdfsj"]
 [ext_resource type="SpriteFrames" uid="uid://dbbei4osp4vmj" path="res://Resources/HUDS/Animations/HUD_AsteroidBelt.tres" id="2_imfpi"]
 
 [node name="HudAsteroidBelt" type="Node2D"]

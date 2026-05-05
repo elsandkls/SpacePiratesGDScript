@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cj5mk5fv6sodg"]
 
-[ext_resource type="Script" uid="uid://corgt3x7cfvk5" path="res://Resources/SolarSystems/Scripts/solar_system.gd" id="1_2jc5t"]
+[ext_resource type="Script" uid="uid://corgt3x7cfvk5" path="res://Resources/SolarSystems/Scripts/solar_system.cs" id="1_2jc5t"]
 [ext_resource type="SpriteFrames" uid="uid://cby3uf30djpac" path="res://Resources/SolarSystems/Animations/SolarSystem_Background.tres" id="2_i8evy"]
 [ext_resource type="PackedScene" uid="uid://cerqncchx7vx1" path="res://Resources/Suns/Scenes/Sun.tscn" id="3_p3bqm"]
 [ext_resource type="PackedScene" uid="uid://djp0jdhk5db01" path="res://Resources/Planets/Scenes/LargePlanet.tscn" id="4_ac3h8"]

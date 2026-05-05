@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ci367hv2ua7ep"]
 
-[ext_resource type="Script" uid="uid://owpvyxqgd7p" path="res://Resources/HUDS/Scripts/hud_weapons.gd" id="1_8bsn6"]
+[ext_resource type="Script" uid="uid://owpvyxqgd7p" path="res://Resources/HUDS/Scripts/hud_weapons.cs" id="1_8bsn6"]
 [ext_resource type="SpriteFrames" uid="uid://cxjm46nalijdw" path="res://Resources/HUDS/Animations/HUD_Weapons.tres" id="2_eyr03"]
 [ext_resource type="SpriteFrames" uid="uid://dj3ybhpqcqmis" path="res://Resources/HUDS/Scenes/ICONS/HUD_Weapons_ICON_Base.tres" id="3_7yl44"]
 [ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://Resources/HUDS/ArtAssets/UnderBar.png" id="4_a74fw"]

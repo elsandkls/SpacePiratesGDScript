@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bb05mma3fbw4l"]
 
-[ext_resource type="Script" uid="uid://pcif36v0ny3a" path="res://Resources/HUDS/Scripts/hud_ship_builder.gd" id="1_g6emu"]
+[ext_resource type="Script" uid="uid://pcif36v0ny3a" path="res://Resources/HUDS/Scripts/hud_ship_builder.cs" id="1_g6emu"]
 [ext_resource type="SpriteFrames" uid="uid://dijrcftws1duk" path="res://Resources/HUDS/Animations/HUD_ShipBuilder.tres" id="2_lt8vq"]
 [ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://Resources/HUDS/ArtAssets/UnderBar.png" id="3_cd2y3"]
 [ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://Resources/HUDS/ArtAssets/OverBar.png" id="4_qxka4"]

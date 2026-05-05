@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dg6uqs207kb3i"]
 
-[ext_resource type="Script" uid="uid://dakh2hdlsdxaw" path="res://Resources/HUDS/Scripts/hud_cargo.gd" id="1_7ymyp"]
+[ext_resource type="Script" uid="uid://dakh2hdlsdxaw" path="res://Resources/HUDS/Scripts/hud_cargo.cs" id="1_7ymyp"]
 [ext_resource type="SpriteFrames" uid="uid://corjq3erhvckc" path="res://Resources/HUDS/Animations/HUD_Cargo.tres" id="2_3hay5"]
 [ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://Resources/HUDS/ArtAssets/UnderBar.png" id="3_walo8"]
 [ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://Resources/HUDS/ArtAssets/OverBar.png" id="4_ottj4"]

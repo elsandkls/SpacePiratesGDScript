@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c84o6ln3h1stk"]
 
-[ext_resource type="Script" uid="uid://4w67r46dg20a" path="res://Resources/Menus/Scripts/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://4w67r46dg20a" path="res://Resources/Menus/Scripts/main_menu.cs" id="1_tt5f1"]
 [ext_resource type="SpriteFrames" uid="uid://cb3qhj10gx73f" path="res://Resources/Menus/Animation/Menu_Animated_Background.tres" id="2_853f1"]
 [ext_resource type="PackedScene" uid="uid://bnrnxmf2aab4u" path="res://Resources/Buttons/Scenes/ExitButton.tscn" id="3_8saeu"]
 [ext_resource type="Texture2D" uid="uid://cpkuqjfmsx2yf" path="res://Resources/Buttons/ArtAssets/placeholder_button_120_60_Normal.png" id="4_a367j"]

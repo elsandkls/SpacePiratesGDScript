@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://dgxop0imhvyjq"]
 
-[ext_resource type="Script" uid="uid://cqjgbfhn4yn7n" path="res://Resources/ShipBuilder/Scripts/ship_builder.gd" id="1_nkq13"]
+[ext_resource type="Script" uid="uid://cqjgbfhn4yn7n" path="res://Resources/ShipBuilder/Scripts/ship_builder.cs" id="1_nkq13"]
 [ext_resource type="SpriteFrames" uid="uid://diro5gqcqnbut" path="res://Resources/ShipBuilder/Animations/ShipBuilderBG.tres" id="2_kh5wr"]
 [ext_resource type="PackedScene" uid="uid://bnrnxmf2aab4u" path="res://Resources/Buttons/Scenes/ExitButton.tscn" id="3_c3g04"]
 [ext_resource type="Texture2D" uid="uid://cpkuqjfmsx2yf" path="res://Resources/Buttons/ArtAssets/placeholder_button_120_60_Normal.png" id="4_8wpb1"]

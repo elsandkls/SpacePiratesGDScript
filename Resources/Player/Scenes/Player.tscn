@@ -14,21 +14,23 @@ height = 132.0
 radius = 43.0
 height = 132.0
 
-[node name="Player" type="Node2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="PlayerAnimSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_rpqav")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D_CENTER" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4pdrp")
 
-[node name="CollisionShape2D_LEFT" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D_LEFT" type="CollisionShape2D" parent="."]
 position = Vector2(-79, 41)
 shape = SubResource("CapsuleShape2D_0qu43")
 
-[node name="CollisionShape2D_RIGHT" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D_RIGHT" type="CollisionShape2D" parent="."]
 position = Vector2(74, 40)
 shape = SubResource("CapsuleShape2D_hql3v")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
