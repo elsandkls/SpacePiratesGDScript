@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3x4eu0mjcklc"]
 
-[ext_resource type="Script" uid="uid://dom5khmt5ea05" path="res://Resources/SpaceStations/Scripts/space_station.cs" id="1_d678p"]
+[ext_resource type="Script" uid="uid://dom5khmt5ea05" path="res://Resources/SpaceStations/Scripts/SpaceStation.cs" id="1_d678p"]
 [ext_resource type="SpriteFrames" uid="uid://bdhoghx76ltyd" path="res://Resources/SpaceStations/Animations/SpaceStation.tres" id="2_fjib7"]
 
 [node name="SpaceStation" type="Node2D"]

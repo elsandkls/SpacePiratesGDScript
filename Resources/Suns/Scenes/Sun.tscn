@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cerqncchx7vx1"]
 
-[ext_resource type="Script" uid="uid://ciqak124nrjuq" path="res://Resources/Suns/Scripts/sun.cs" id="1_x0n6q"]
+[ext_resource type="Script" uid="uid://ciqak124nrjuq" path="res://Resources/Suns/Scripts/Sun.cs" id="1_x0n6q"]
 [ext_resource type="SpriteFrames" uid="uid://cchdsqk3tcx3n" path="res://Resources/Suns/Animations/Sun.tres" id="2_66ien"]
 
 [node name="Sun" type="Node2D"]
