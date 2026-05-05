@@ -10,12 +10,12 @@ public partial class SaveMenu : Node2D
  
 	public void _on_menu_game_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Menus/Scenes/SaveMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Resources/Menus/Scenes/SaveMenu.tscn");
 	}
 
 	public void _on_exit_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Menus/Scenes/SettingsMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Resources/Menus/Scenes/SettingsMenu.tscn");
 	}
 
 }

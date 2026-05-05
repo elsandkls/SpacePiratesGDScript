@@ -10,12 +10,12 @@ public partial class StartMenu : Node2D
  
 	public void _start_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Menus/Scenes/MainMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Resources/Menus/Scenes/MainMenu.tscn");
 	}
  
 	public void _on_exit_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Menus/Scenes/SettingsMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Resources/Menus/Scenes/SettingsMenu.tscn");
 	}
 
 }

@@ -11,7 +11,7 @@ public partial class Player : CharacterBody2D
      private AnimatedSprite2D PlayerAnimSprite2D; 
      private Sprite2D sprite2DNode;
      
-     GameData gameData;
+    public GameData gameData;
     private string ClassName = "Player|CharacterBody2D";
     private int debug = 1; 
     private Vector2 direction = new();

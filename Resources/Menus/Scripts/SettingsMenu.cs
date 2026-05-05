@@ -10,20 +10,20 @@ public partial class SettingsMenu : Node2D
  
 	public void _on_check_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Menus/Scenes/SaveMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Resources/Menus/Scenes/SaveMenu.tscn");
 	}
 	public void _on_check_button_toggled()
 	{
-		GetTree().ChangeSceneToFile("res://Menus/Scenes/SaveMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Resources/Menus/Scenes/SaveMenu.tscn");
 	}
 	public void _on_option_button_item_selected()
 	{
-		GetTree().ChangeSceneToFile("res://Menus/Scenes/SaveMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Resources/Menus/Scenes/SaveMenu.tscn");
 	}
 
 	public void _on_exit_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Menus/Scenes/SettingsMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Resources/Menus/Scenes/SettingsMenu.tscn");
 	}
 
 }

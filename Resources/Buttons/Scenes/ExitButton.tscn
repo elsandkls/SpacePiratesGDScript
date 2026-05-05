@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://2cve1dxuse5l" path="res://Resources/Buttons/ArtAssets/placeholder_button_120_60_Pressed.png" id="2_cs8ew"]
 [ext_resource type="Texture2D" uid="uid://c8egf8u4x8nsv" path="res://Resources/Buttons/ArtAssets/placeholder_button_120_60_Hover.png" id="3_5igkq"]
 [ext_resource type="Texture2D" uid="uid://dsne2f40fhjof" path="res://Resources/Buttons/ArtAssets/placeholder_button_120_60_Disabled.png" id="4_q0gr6"]
-[ext_resource type="Script" uid="uid://cpfpe82cqglpw" path="res://Resources/Buttons/Scripts/exit_button.cs" id="5_cs8ew"]
+[ext_resource type="Script" uid="uid://cpfpe82cqglpw" path="res://Resources/Buttons/Scripts/ExitButton.cs" id="5_cs8ew"]
 
 [node name="ExitButton" type="Node2D"]
 script = ExtResource("5_cs8ew")

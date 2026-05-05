@@ -2,13 +2,14 @@ using Godot;
 using System;
 using System.Runtime.CompilerServices;
 using GodotDict = Godot.Collections.Dictionary;  
-public partial class ShipWeaponsModule : Node2D
+
+public partial class ShipBuilder : Node2D
 {   
 	private int Core_ClickCount = 0;
 	private int Weapon_ClickCount = 0;
 	private int Engine_ClickCount = 0;
 	private int Cockpit_ClickCount = 0;
-	private int cargoClickCount = 0; 
+	private int Cargo_ClickCount = 0; 
     public override void _Ready()
     {
 		
