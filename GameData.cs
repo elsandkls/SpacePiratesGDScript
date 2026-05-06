@@ -13,14 +13,25 @@ public partial class GameData : Node
     public const int GridWidth = max_width;
     public const int GridHeight = max_height;
  
-    public const string ANIM_IDLE_LEFT = "Idle_Left";
-    public const string ANIM_IDLE_RIGHT = "Idle_Right";
-    public const string ANIM_WALK_LEFT = "Walk_Left";
-    public const string ANIM_WALK_RIGHT = "Walk_Right";
-    public const string DIRECTION_RIGHT = "right";
-    public const string DIRECTION_LEFT = "left";
-    public const string DIRECTION_FORWARD = "forward";
-    public const string DIRECTION_BACKWARD = "backward";
+    public const string ANIM_IDLE_LEFT = "IDLE_LEFT";
+    public const string ANIM_IDLE_RIGHT = "IDLE_RIGHT";
+    public const string ANIM_IDLE_UP = "IDLE_UP";
+    public const string ANIM_IDLE_DOWN = "IDLE_DOWN";
+
+    public const string ANIM_LEFT = "LEFT";
+    public const string ANIM_RIGHT = "RIGHT";
+    public const string ANIM_UP = "UP";
+    public const string ANIM_DOWN = "DOWN";
+
+    public const string ANIM_LEFT_DAMAGED = "LEFT_Damaged";
+    public const string ANIM_RIGHT_DAMAGED = "RIGHT_Damaged";
+    public const string ANIM_UP_DAMAGED = "UP_Damaged";
+    public const string ANIM_DOWN_DAMAGED = "DOWN_Damaged";
+
+    public const string DIRECTION_RIGHT = "RIGHT";
+    public const string DIRECTION_LEFT = "LEFT";
+    public const string DIRECTION_UP = "UP";
+    public const string DIRECTION_DOWN = "DOWN";
 
     public void SetGodotData(Dictionary data)
     { 
@@ -161,18 +172,37 @@ public partial class GameData : Node
         if (data == "ANIM_IDLE_LEFT"){return ANIM_IDLE_LEFT ;}
 
         if (data == "ANIM_IDLE_RIGHT"){return ANIM_IDLE_RIGHT ;}
+
+        if (data == "ANIM_IDLE_UP"){return ANIM_IDLE_UP ;}
+
+        if (data == "ANIM_IDLE_DOWN"){return ANIM_IDLE_DOWN ;}
+
         
-        if (data == "ANIM_WALK_LEFT"){return ANIM_WALK_LEFT ;}
+        if (data == "ANIM_LEFT"){return ANIM_LEFT ;}
         
-        if (data == "ANIM_WALK_RIGHT"){return ANIM_WALK_RIGHT ;}
+        if (data == "ANIM_RIGHT"){return ANIM_RIGHT ;}
+
+        if (data == "ANIM_UP"){return ANIM_UP ;}
+        
+        if (data == "ANIM_DOWN"){return ANIM_DOWN ;}
+
         
         if (data == "DIRECTION_RIGHT"){return DIRECTION_RIGHT ;}
         
         if (data == "DIRECTION_LEFT"){return DIRECTION_LEFT ;}
         
-        if (data == "DIRECTION_FORWARD"){return DIRECTION_FORWARD ;}
+        if (data == "DIRECTION_UP"){return DIRECTION_UP ;}
         
-        if (data == "DIRECTION_BACKWARD"){return DIRECTION_BACKWARD ;} 
+        if (data == "DIRECTION_DOWN"){return DIRECTION_DOWN ;} 
+
+
+        if (data == "ANIM_LEFT_DAMAGED"){return ANIM_LEFT_DAMAGED ;}
+        
+        if (data == "ANIM_RIGHT_DAMAGED"){return ANIM_RIGHT_DAMAGED ;}
+
+        if (data == "ANIM_UP_DAMAGED"){return ANIM_UP_DAMAGED ;}
+        
+        if (data == "ANIM_DOWN_DAMAGED"){return ANIM_DOWN_DAMAGED ;} 
     
         return "";
     }
