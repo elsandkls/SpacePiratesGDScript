@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://csvomtqhxqvwu"]
 
-[ext_resource type="Texture2D" uid="uid://2ih7k54be48p" path="res://Resources/Planets/Animations/LargePlanet.png" id="1_rdbiw"]
+[ext_resource type="Texture2D" uid="uid://2ih7k54be48p" path="res://Resources/Planets/ArtAssets/LargePlanet.png" id="1_rdbiw"]
 
 [resource]
 animations = [{
