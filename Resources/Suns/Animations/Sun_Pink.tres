@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dfq3bfrvecitv"]
+
+[ext_resource type="Texture2D" uid="uid://bg1ybt30341ay" path="res://Resources/Suns/ArtAssets/Sun_Pink.png" id="1_ac507"]
+[ext_resource type="Texture2D" uid="uid://bvhw7n86evxck" path="res://Resources/Suns/ArtAssets/Sun_Pink_f01.png" id="2_e3o6t"]
+[ext_resource type="Texture2D" uid="uid://b4x84dnxjolhp" path="res://Resources/Suns/ArtAssets/Sun_Pink_f02.png" id="3_giw7p"]
+[ext_resource type="Texture2D" uid="uid://bht2cab0evug0" path="res://Resources/Suns/ArtAssets/Sun_Pink_f03.png" id="4_i5vom"]
+[ext_resource type="Texture2D" uid="uid://dokebiwblsnt" path="res://Resources/Suns/ArtAssets/Sun_Pink_f04.png" id="5_edsec"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ac507")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e3o6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_giw7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i5vom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_edsec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i5vom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_giw7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e3o6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ac507")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
