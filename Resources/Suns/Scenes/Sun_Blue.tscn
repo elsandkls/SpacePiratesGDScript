@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://buwr335r3umjl"]
+
+[ext_resource type="SpriteFrames" uid="uid://30yonu0y6l8o" path="res://Resources/Suns/Animations/Sun_Blue.tres" id="1_kkgab"]
+
+[node name="SunBlue" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_kkgab")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr5kmcqa2he3r"]
+
+[ext_resource type="SpriteFrames" uid="uid://dfq3bfrvecitv" path="res://Resources/Suns/Animations/Sun_Pink.tres" id="1_yyl71"]
+
+[node name="SunPink" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_yyl71")
