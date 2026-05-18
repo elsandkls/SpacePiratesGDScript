@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bdhoghx76ltyd"]
 
-[ext_resource type="Texture2D" uid="uid://bdfft2as1hk4h" path="res://Resources/SpaceStations/Animations/SpaceStation.png" id="1_nnycr"]
+[ext_resource type="Texture2D" uid="uid://bdfft2as1hk4h" path="res://Resources/SpaceStations/ArtAssets/SpaceStation.png" id="1_nnycr"]
 
 [resource]
 animations = [{
