@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dofhm73i2cxat"]
 
-[ext_resource type="Texture2D" uid="uid://bqxuix8m7ojhb" path="res://Resources/PirateBases/Animations/PirateBase.png" id="1_lmfqm"]
+[ext_resource type="Texture2D" uid="uid://bqxuix8m7ojhb" path="res://Resources/PirateBases/ArtAssets/PirateBase.png" id="1_lmfqm"]
 
 [resource]
 animations = [{
