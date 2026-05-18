@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://oisbtrde7388"]
+
+[ext_resource type="Texture2D" uid="uid://sxb2q3eknwh1" path="res://Resources/Menus/Animation/Menu_Background.png" id="1_j30hq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2tffk"]
+texture = ExtResource("1_j30hq")
+texture_region_size = Vector2i(600, 500)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[resource]
+tile_size = Vector2i(600, 500)
+sources/0 = SubResource("TileSetAtlasSource_2tffk")
