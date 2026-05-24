@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cig8r552k7t7k"
-path="res://.godot/imported/SolarSystemMapSlice_01.png-55b3616329c41bc02f3a28d83c5c55f5.ctex"
+uid="uid://ddqn08vx32jcx"
+path="res://.godot/imported/player_space_ship_level_1_small_silver_01.jpg-8dfcdd7fcd37e87f1560f2d874362b38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/SolarSystems/ArtAssets/SolarSystemMapSlice_01.png"
-dest_files=["res://.godot/imported/SolarSystemMapSlice_01.png-55b3616329c41bc02f3a28d83c5c55f5.ctex"]
+source_file="res://Resources/Player/ArtAssets/player_space_ship_level_1_small_silver_01.jpg"
+dest_files=["res://.godot/imported/player_space_ship_level_1_small_silver_01.jpg-8dfcdd7fcd37e87f1560f2d874362b38.ctex"]
 
 [params]
 

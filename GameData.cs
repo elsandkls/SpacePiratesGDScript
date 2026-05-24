@@ -1,7 +1,9 @@
 using Godot;
 using System;
 using Godot.Collections;  
-using GodotDict = Godot.Collections.Dictionary;  
+using GodotDict = Godot.Collections.Dictionary;
+using System.Data;
+
 
 public partial class GameData : Node
 {
@@ -13,25 +15,92 @@ public partial class GameData : Node
     public const int GridWidth = max_width;
     public const int GridHeight = max_height;
  
-    public const string ANIM_IDLE_LEFT = "IDLE_LEFT";
-    public const string ANIM_IDLE_RIGHT = "IDLE_RIGHT";
-    public const string ANIM_IDLE_UP = "IDLE_UP";
-    public const string ANIM_IDLE_DOWN = "IDLE_DOWN";
+    public const string STATE_IDLE = "IDLE";
+    public const string STATE_MOVEMENT = "MOVING";
+
+    public const string STATE_DAMAGED = "DAMAGED";
+    public const string STATE_NORMAL = "NORMAL";
+ 
+
+    public const string ANIM_IDLE_LEFT = "LEFT_IDLE";
+    public const string ANIM_IDLE_RIGHT = "RIGHT_IDLE";
+    public const string ANIM_IDLE_UP = "UP_IDLE";
+    public const string ANIM_IDLE_DOWN = "DOWN_IDLE";
 
     public const string ANIM_LEFT = "LEFT";
     public const string ANIM_RIGHT = "RIGHT";
     public const string ANIM_UP = "UP";
     public const string ANIM_DOWN = "DOWN";
 
-    public const string ANIM_LEFT_DAMAGED = "LEFT_Damaged";
-    public const string ANIM_RIGHT_DAMAGED = "RIGHT_Damaged";
-    public const string ANIM_UP_DAMAGED = "UP_Damaged";
-    public const string ANIM_DOWN_DAMAGED = "DOWN_Damaged";
+    public const string ANIM_LEFT_DAMAGED = "LEFT_DAMAGED";
+    public const string ANIM_RIGHT_DAMAGED = "RIGHT_DAMAGED";
+    public const string ANIM_UP_DAMAGED = "UP_DAMAGED";
+    public const string ANIM_DOWN_DAMAGED = "DOWN_DAMAGED";
+
+    
+    public const string ANIM_IDLE_LEFT_DAMAGED = "LEFT_DAMAGED";
+    public const string ANIM_IDLE_RIGHT_DAMAGED = "RIGHT_DAMAGED";
+    public const string ANIM_IDLE_UP_DAMAGED = "UP_DAMAGED";
+    public const string ANIM_IDLE_DOWN_DAMAGED = "DOWN_DAMAGED";
 
     public const string DIRECTION_RIGHT = "RIGHT";
     public const string DIRECTION_LEFT = "LEFT";
     public const string DIRECTION_UP = "UP";
     public const string DIRECTION_DOWN = "DOWN";
+
+    public string Get_DIRECTION_RIGHT()
+    { 
+        var func_name = "Get_DIRECTION_RIGHT";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_RIGHT ); }
+        return( DIRECTION_RIGHT );
+    }  
+    public string Get_DIRECTION_LEFT()
+    { 
+        var func_name = "Get_DIRECTION_LEFT";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_LEFT ); }
+        return( DIRECTION_LEFT );
+    }  
+    public string Get_DIRECTION_UP()
+    { 
+        var func_name = "Get_DIRECTION_UP";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_UP ); }
+        return( DIRECTION_UP );
+    }  
+    public string Get_DIRECTION_DOWN()
+    { 
+        var func_name = "Get_DIRECTION_DOWN";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_DOWN ); }
+        return( DIRECTION_DOWN );
+    }  
+
+
+    public string Get_STATE_MOVEMENT()
+    { 
+        var func_name = "Get_STATE_MOVEMENT";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + STATE_MOVEMENT ); }
+        return( STATE_MOVEMENT );
+    } 
+    public string Get_STATE_IDLE()
+    { 
+        var func_name = "Get_STATE_IDLE";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + STATE_IDLE ); }
+        return( STATE_IDLE );
+    } 
+
+
+    public string Get_STATE_NORMAL()
+    { 
+        var func_name = "Get_STATE_NORMAL";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + STATE_NORMAL ); }
+        return( STATE_NORMAL );
+    } 
+    public string Get_STATE_DAMAGED()
+    { 
+        var func_name = "Get_STATE_DAMAGED";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + STATE_DAMAGED ); }
+        return( STATE_DAMAGED );
+    } 
+ 
 
     public void SetGodotData(Dictionary data)
     { 
@@ -167,46 +236,139 @@ public partial class GameData : Node
         return( last_known_direction );
     }   
 
-    public string GameConstants(string data)
+
+    public (string, string) GameConstants(string data, string mystate, string movement)
     {
-        if (data == "ANIM_IDLE_LEFT"){return ANIM_IDLE_LEFT ;}
+        var func_name = "GameConstants"; 
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] " + data); }
 
-        if (data == "ANIM_IDLE_RIGHT"){return ANIM_IDLE_RIGHT ;}
+        if (data == DIRECTION_RIGHT){ 
+            if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]  MATCH: " + DIRECTION_RIGHT); }
 
-        if (data == "ANIM_IDLE_UP"){return ANIM_IDLE_UP ;}
-
-        if (data == "ANIM_IDLE_DOWN"){return ANIM_IDLE_DOWN ;}
-
-        
-        if (data == "ANIM_LEFT"){return ANIM_LEFT ;}
-        
-        if (data == "ANIM_RIGHT"){return ANIM_RIGHT ;}
-
-        if (data == "ANIM_UP"){return ANIM_UP ;}
-        
-        if (data == "ANIM_DOWN"){return ANIM_DOWN ;}
-
-        
-        if (data == "DIRECTION_RIGHT"){return DIRECTION_RIGHT ;}
-        
-        if (data == "DIRECTION_LEFT"){return DIRECTION_LEFT ;}
-        
-        if (data == "DIRECTION_UP"){return DIRECTION_UP ;}
-        
-        if (data == "DIRECTION_DOWN"){return DIRECTION_DOWN ;} 
-
-
-        if (data == "ANIM_LEFT_DAMAGED"){return ANIM_LEFT_DAMAGED ;}
-        
-        if (data == "ANIM_RIGHT_DAMAGED"){return ANIM_RIGHT_DAMAGED ;}
-
-        if (data == "ANIM_UP_DAMAGED"){return ANIM_UP_DAMAGED ;}
-        
-        if (data == "ANIM_DOWN_DAMAGED"){return ANIM_DOWN_DAMAGED ;} 
-    
-        return "";
-    }
+            if (movement == STATE_IDLE)  // no movement
+            {
+                if(mystate == STATE_NORMAL) // state not damaged = normal
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_RIGHT); }
+                    return (DIRECTION_RIGHT, ANIM_IDLE_RIGHT);   
+                }
+                else // state damaged
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_RIGHT_DAMAGED); }
+                    return (DIRECTION_RIGHT, ANIM_RIGHT_DAMAGED);                    
+                } 
+            }
+            else // movement, not idle
+            {
+                if(mystate == STATE_NORMAL) // state not damaged = normal
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_RIGHT); }
+                    return (DIRECTION_RIGHT, ANIM_RIGHT);   
+                }
+                else // state damaged
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_RIGHT_DAMAGED); }
+                    return (DIRECTION_RIGHT, ANIM_IDLE_RIGHT_DAMAGED);                    
+                } 
+            }
  
+        }        
 
+        if (data == DIRECTION_LEFT){ 
 
+            if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]  MATCH: " + DIRECTION_LEFT); }
+
+            if (movement == STATE_IDLE)  // no movement
+            {
+                if(mystate == STATE_NORMAL) // state not damaged = normal
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_LEFT); }
+                    return (DIRECTION_LEFT, ANIM_IDLE_LEFT);   
+                }
+                else // state damaged
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT_DAMAGED); }
+                    return (DIRECTION_LEFT, ANIM_IDLE_LEFT_DAMAGED);                    
+                } 
+            }
+            else // movement, not idle
+            {
+                if(mystate == STATE_NORMAL) // state not damaged = normal
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT); }
+                    return (DIRECTION_LEFT, ANIM_LEFT);   
+                }
+                else // state damaged
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT_DAMAGED); }
+                    return (DIRECTION_LEFT, ANIM_IDLE_LEFT_DAMAGED);                    
+                } 
+            } 
+        }   
+
+        if (data == DIRECTION_UP){ 
+            if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]  MATCH: " + DIRECTION_UP); }
+
+            if (movement == STATE_IDLE)  // no movement
+            {
+                if(mystate == STATE_NORMAL) // state not damaged = normal
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_UP); }
+                    return (DIRECTION_UP, ANIM_IDLE_UP);   
+                }
+                else // state damaged
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_UP_DAMAGED); }
+                    return (DIRECTION_UP, ANIM_UP_DAMAGED);                    
+                } 
+            }
+            else // movement, not idle
+            {
+                if(mystate == STATE_NORMAL) // state not damaged = normal
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT); }
+                    return (DIRECTION_UP, ANIM_UP);   
+                }
+                else // state damaged
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_UP_DAMAGED); }
+                    return (DIRECTION_UP, ANIM_IDLE_UP_DAMAGED);                    
+                } 
+            }    
+        }        
+        if (data == DIRECTION_DOWN){ 
+            if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]  MATCH: " + DIRECTION_DOWN); }
+
+            if (movement == STATE_IDLE)  // no movement
+            {
+                if(mystate == STATE_NORMAL) // state not damaged = normal
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_DOWN); }
+                    return (DIRECTION_DOWN, ANIM_IDLE_DOWN);   
+                }
+                else // state damaged
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_DOWN_DAMAGED); }
+                    return (DIRECTION_DOWN, ANIM_DOWN_DAMAGED);                    
+                } 
+            }
+            else // movement, not idle
+            {
+                if(mystate == STATE_NORMAL) // state not damaged = normal
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT); }
+                    return (DIRECTION_DOWN, ANIM_DOWN);   
+                }
+                else // state damaged
+                {
+                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_DOWN_DAMAGED); }
+                    return (DIRECTION_DOWN, ANIM_IDLE_DOWN_DAMAGED);                    
+                } 
+            }   
+        }
+     
+    
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] NO MATCH - DEFAULT: " + ANIM_UP); }
+        return (DIRECTION_UP, ANIM_UP);  
+    }
 }

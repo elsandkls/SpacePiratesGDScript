@@ -19,8 +19,10 @@ height = 132.0
 script = ExtResource("1_2eexr")
 
 [node name="PlayerAnimSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, 1)
+scale = Vector2(0.3348131, 0.39995778)
 sprite_frames = ExtResource("1_rpqav")
-animation = &"UP_IDLE"
+animation = &"UP"
 
 [node name="CollisionShape2D_CENTER" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4pdrp")
@@ -36,3 +38,5 @@ shape = SubResource("CapsuleShape2D_hql3v")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

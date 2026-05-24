@@ -1,10 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://c4i7usda4fo4d"]
+[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://c4i7usda4fo4d"]
 
-[ext_resource type="Texture2D" uid="uid://t0xhkqciml3u" path="res://Resources/Player/ArtAssets/PlayerShip_Yellow.png" id="1_m70i6"]
 [ext_resource type="Texture2D" uid="uid://eitjojpu3o5v" path="res://Resources/Player/ArtAssets/DOWN/PlayerShip_Blue_Down.png" id="1_vm4kr"]
 [ext_resource type="Texture2D" uid="uid://lob4fh6lxm12" path="res://Resources/Player/ArtAssets/DOWN/PlayerShip_Green_Down.png" id="2_iqgrn"]
 [ext_resource type="Texture2D" uid="uid://bnfx0gvqlpcr2" path="res://Resources/Player/ArtAssets/DOWN/PlayerShip_Yellow_Down.png" id="3_bkcdj"]
-[ext_resource type="Texture2D" uid="uid://cxcelb8i8xipw" path="res://Resources/Player/ArtAssets/PlayerShip_Blue.png" id="4_30k3v"]
 [ext_resource type="Texture2D" uid="uid://bbnlf4p5dn0qo" path="res://Resources/Player/ArtAssets/DOWN/PlayerShip_Red_Down.png" id="4_uk0nh"]
 [ext_resource type="Texture2D" uid="uid://f0mdj4aa6ny4" path="res://Resources/Player/ArtAssets/DOWN/PlayerShip_Orange_Down.png" id="5_67mht"]
 [ext_resource type="Texture2D" uid="uid://c8l5adyrdg0id" path="res://Resources/Player/ArtAssets/LEFT/PlayerShip_Blue_Left.png" id="6_rxr7d"]
@@ -17,9 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://cv8cejsdnus0m" path="res://Resources/Player/ArtAssets/RIGHT/PlayerShip_Yellow_Right.png" id="13_03ruq"]
 [ext_resource type="Texture2D" uid="uid://bo806y21qdl6x" path="res://Resources/Player/ArtAssets/RIGHT/PlayerShip_Red_Right.png" id="14_crxyv"]
 [ext_resource type="Texture2D" uid="uid://i5ltsc5xorl0" path="res://Resources/Player/ArtAssets/RIGHT/PlayerShip_Orange_Right.png" id="15_hotn4"]
-[ext_resource type="Texture2D" uid="uid://46vnp4ag0hq7" path="res://Resources/Player/ArtAssets/UP/PlayerShip_Blue_Up.png" id="16_dcbjb"]
+[ext_resource type="Texture2D" uid="uid://8ovfae0djaoh" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_small_silver.png" id="16_gd268"]
 [ext_resource type="Texture2D" uid="uid://dlcxb7rghe0k0" path="res://Resources/Player/ArtAssets/UP/PlayerShip_Green_Up.png" id="17_8sqie"]
-[ext_resource type="Texture2D" uid="uid://bwurmoii40mxn" path="res://Resources/Player/ArtAssets/PlayerShip_Green.png" id="19_8tx47"]
+[ext_resource type="Texture2D" uid="uid://cgxodeb7rt82j" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_small_silver_02.png" id="17_vm4kr"]
+[ext_resource type="Texture2D" uid="uid://droaiouqmo2uo" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_small_silver_01.png" id="18_iqgrn"]
 [ext_resource type="Texture2D" uid="uid://bgg6pfsx0cn6m" path="res://Resources/Player/ArtAssets/UP/PlayerShip_Red_Up.png" id="21_27tbp"]
 [ext_resource type="Texture2D" uid="uid://xqqw8hsqkbx5" path="res://Resources/Player/ArtAssets/UP/PlayerShip_Orange_Up.png" id="22_vn4xs"]
 [ext_resource type="Texture2D" uid="uid://215wii76bad2" path="res://Resources/Player/ArtAssets/UP/PlayerShip_Yellow_Up.png" id="23_qeptl"]
@@ -63,7 +62,7 @@ animations = [{
 "texture": ExtResource("4_uk0nh")
 }],
 "loop": true,
-"name": &"DOWN_Damaged",
+"name": &"DOWN_DAMAGED",
 "speed": 5.0
 }, {
 "frames": [{
@@ -114,7 +113,7 @@ animations = [{
 "texture": ExtResource("9_0own1")
 }],
 "loop": true,
-"name": &"LEFT_Damaged",
+"name": &"LEFT_DAMAGED",
 "speed": 5.0
 }, {
 "frames": [{
@@ -165,7 +164,7 @@ animations = [{
 "texture": ExtResource("14_crxyv")
 }],
 "loop": true,
-"name": &"RIGHT_Damaged",
+"name": &"RIGHT_DAMAGED",
 "speed": 5.0
 }, {
 "frames": [{
@@ -181,19 +180,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_dcbjb")
+"texture": ExtResource("16_gd268")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_8sqie")
+"texture": ExtResource("17_vm4kr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_m70i6")
+"texture": ExtResource("18_iqgrn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_8tx47")
+"texture": ExtResource("17_vm4kr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_30k3v")
+"texture": ExtResource("16_gd268")
 }],
 "loop": true,
 "name": &"UP",
@@ -216,7 +215,7 @@ animations = [{
 "texture": ExtResource("21_27tbp")
 }],
 "loop": true,
-"name": &"UP_Damaged",
+"name": &"UP_DAMAGED",
 "speed": 5.0
 }, {
 "frames": [{

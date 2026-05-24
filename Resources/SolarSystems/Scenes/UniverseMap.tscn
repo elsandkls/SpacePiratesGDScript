@@ -1,15 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://11vbl0jm8hob"]
+[gd_scene load_steps=7 format=4 uid="uid://11vbl0jm8hob"]
 
 [ext_resource type="SpriteFrames" uid="uid://cby3uf30djpac" path="res://Resources/SolarSystems/Animations/SolarSystem_Background.tres" id="1_f3hyu"]
+[ext_resource type="TileSet" uid="uid://gtwin4jjlmjx" path="res://Resources/SolarSystems/Animations/SolarSystem_Star_Background.tres" id="1_pfskc"]
+[ext_resource type="TileSet" uid="uid://oisbtrde7388" path="res://Resources/SolarSystems/Animations/SolarSystem_Star_Background_Stars.tres" id="2_betpd"]
 [ext_resource type="PackedScene" uid="uid://bnrnxmf2aab4u" path="res://Resources/Buttons/Scenes/ExitButton.tscn" id="2_tfe24"]
 [ext_resource type="PackedScene" uid="uid://b2t1nf3mwfl63" path="res://Resources/Buttons/Scenes/MainMenuButton.tscn" id="3_65ekb"]
-[ext_resource type="SpriteFrames" uid="uid://bin6tgbj0yae5" path="res://Resources/SolarSystems/Animations/AnimatedSprite2D_System01.tres" id="4_1d55i"]
-[ext_resource type="SpriteFrames" uid="uid://bx3c1bpadmg7h" path="res://Resources/SolarSystems/Animations/AnimatedSprite2D_System02.tres" id="5_6yk68"]
-[ext_resource type="SpriteFrames" uid="uid://ci2fngd7dh82v" path="res://Resources/SolarSystems/Animations/UnscannedSquare.tres" id="6_6yk68"]
-[ext_resource type="SpriteFrames" uid="uid://0lixnbf3yug6" path="res://Resources/SolarSystems/Animations/AnimatedSprite2D_System03.tres" id="6_65hhg"]
-[ext_resource type="SpriteFrames" uid="uid://1def5rfbmgmf" path="res://Resources/SolarSystems/Animations/AnimatedSprite2D_SystemEmpty.tres" id="7_p7330"]
+[ext_resource type="PackedScene" uid="uid://bgfmdip7vn0ot" path="res://Resources/SolarSystems/Scenes/MiniScene.tscn" id="6_dn1wv"]
 
 [node name="UniverseMap" type="Node2D"]
+
+[node name="TileMapLayer_BG_Space" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAP//AAAEAAQAAAAAAAAAAAAAAAIAAAAAAAEAAAABAAAAAAAAAAIAAAADAAEAAAAAAAMAAAADAAMAAAAAAAQAAAACAAIAAAAAAAUAAAAEAAMAAAABAAUAAAAEAAAAAAABAAQAAAAEAAMAAAABAAMAAAABAAQAAAABAAIAAAADAAAAAAABAAEAAAADAAEAAAABAAAAAAACAAAAAAABAP//AAABAAAAAAACAP//AAABAAQAAAACAAAAAAADAAQAAAACAAEAAAADAAAAAAACAAIAAAACAAAAAAACAAMAAAACAAAAAAACAAQAAAABAAAAAAACAAUAAAABAAIAAAADAAUAAAAEAAQAAAADAAQAAAAEAAMAAAADAAMAAAADAAIAAAADAAIAAAAEAAMAAAADAAEAAAADAAAAAAADAAAAAAAEAAAAAAADAP//AAAEAAQAAAAEAP//AAADAAMAAAAEAAAAAAAEAAMAAAAEAAEAAAAAAAIAAAAEAAIAAAACAAIAAAAEAAMAAAACAAAAAAAEAAQAAAACAAMAAAAEAAUAAAACAAIAAAAFAAUAAAADAAAAAAAFAAQAAAABAAIAAAAFAAMAAAAAAAQAAAAFAAIAAAAEAAIAAAAFAAEAAAABAAAAAAAFAAAAAAABAAMAAAAFAP//AAADAAAAAAAGAP//AAABAAAAAAAGAAAAAAACAAAAAAAGAAEAAAACAAEAAAAGAAIAAAADAAIAAAAGAAMAAAADAAQAAAAGAAQAAAADAAAAAAAGAAUAAAABAAIAAAAHAAUAAAACAAEAAAAHAAQAAAACAAIAAAAHAAMAAAACAAIAAAAHAAIAAAADAAEAAAAHAAEAAAAAAAIAAAAHAAAAAAAAAAIAAAAHAP//AAADAAMAAAAIAP//AAABAAIAAAAIAAAAAAAAAAQAAAAIAAEAAAACAAEAAAAIAAIAAAAAAAIAAAAIAAMAAAACAAAAAAAIAAQAAAADAAMAAAAIAAUAAAAAAAIAAAAJAAUAAAABAAAAAAAJAAQAAAACAAAAAAAJAAMAAAABAAMAAAAJAAIAAAADAAQAAAAJAAEAAAADAAEAAAAJAAAAAAADAAMAAAAJAP//AAAAAAEAAAA=")
+tile_set = ExtResource("1_pfskc")
+
+[node name="TileMapLayer_BG_Stars" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAAAAAEAAAACAAEAAAABAAEAAAACAAAAAAABAAAAAAABAAEAAAACAAAAAAACAAEAAAA=")
+tile_set = ExtResource("2_betpd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_f3hyu")
@@ -42,236 +48,94 @@ columns = 4
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_System" type="AnimatedSprite2D" parent="GridContainer/BoxContainer1"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("4_1d55i")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer1"]
-
-[node name="AnimatedSprite2D_Empty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer1"]
+[node name="MiniScene" parent="GridContainer/BoxContainer1" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer2" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_System" type="AnimatedSprite2D" parent="GridContainer/BoxContainer2"]
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer2"]
-visible = false
-position = Vector2(115, 115)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D_Empty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer2"]
-position = Vector2(115, 115)
-scale = Vector2(1.08, 1)
-sprite_frames = ExtResource("7_p7330")
+[node name="MiniScene" parent="GridContainer/BoxContainer2" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer3" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer3"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer3"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer3"]
+[node name="MiniScene" parent="GridContainer/BoxContainer3" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer4" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer4"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer4"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer4"]
+[node name="MiniScene" parent="GridContainer/BoxContainer4" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer5" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer5"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer5"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer5"]
+[node name="MiniScene" parent="GridContainer/BoxContainer5" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer6" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_System03" type="AnimatedSprite2D" parent="GridContainer/BoxContainer6"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("6_65hhg")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer6"]
-visible = false
-position = Vector2(115, 115)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer6"]
+[node name="MiniScene" parent="GridContainer/BoxContainer6" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer7" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer7"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer7"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer7"]
+[node name="MiniScene" parent="GridContainer/BoxContainer7" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer8" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer8"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer8"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer8"]
+[node name="MiniScene" parent="GridContainer/BoxContainer8" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer9" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer9"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer9"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer9"]
+[node name="MiniScene" parent="GridContainer/BoxContainer9" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer10" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer10"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer10"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer10"]
+[node name="MiniScene" parent="GridContainer/BoxContainer10" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer11" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer11"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer11"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer11"]
+[node name="MiniScene" parent="GridContainer/BoxContainer11" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer12" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer12"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer12"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer12"]
+[node name="MiniScene" parent="GridContainer/BoxContainer12" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer13" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer13"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer13"]
-visible = false
-position = Vector2(115, 115)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer13"]
+[node name="MiniScene" parent="GridContainer/BoxContainer13" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer14" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer14"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer14"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer14"]
+[node name="MiniScene" parent="GridContainer/BoxContainer14" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer15" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_SystemEmpty" type="AnimatedSprite2D" parent="GridContainer/BoxContainer15"]
-position = Vector2(115.07, 115)
-sprite_frames = ExtResource("7_p7330")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer15"]
-visible = false
-position = Vector2(115.07, 115.07)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer15"]
+[node name="MiniScene" parent="GridContainer/BoxContainer15" instance=ExtResource("6_dn1wv")]
 
 [node name="BoxContainer16" type="BoxContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(230, 230)
 layout_mode = 2
 
-[node name="AnimatedSprite2D_System02" type="AnimatedSprite2D" parent="GridContainer/BoxContainer16"]
-position = Vector2(115, 115)
-sprite_frames = ExtResource("5_6yk68")
-
-[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="GridContainer/BoxContainer16"]
-visible = false
-position = Vector2(115, 115)
-sprite_frames = ExtResource("6_6yk68")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer/BoxContainer16"]
+[node name="MiniScene" parent="GridContainer/BoxContainer16" instance=ExtResource("6_dn1wv")]

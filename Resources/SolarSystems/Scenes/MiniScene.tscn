@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgfmdip7vn0ot"]
+
+[ext_resource type="Script" uid="uid://2im51gg8y6go" path="res://Resources/SolarSystems/Scripts/MiniScene.cs" id="1_fpnag"]
+[ext_resource type="SpriteFrames" uid="uid://ci2fngd7dh82v" path="res://Resources/SolarSystems/Animations/UnscannedSquare.tres" id="1_g477e"]
+[ext_resource type="SpriteFrames" uid="uid://1def5rfbmgmf" path="res://Resources/SolarSystems/Animations/AnimatedSprite2D_SystemEmpty.tres" id="2_fpnag"]
+
+[node name="MiniScene" type="Node2D"]
+script = ExtResource("1_fpnag")
+
+[node name="AnimatedSprite2D_Hidden" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(1.1953124, 1.1445313)
+sprite_frames = ExtResource("1_g477e")
+centered = false
+
+[node name="AnimatedSprite2D_System" type="AnimatedSprite2D" parent="."]
+position = Vector2(153, 147.5)
+scale = Vector2(1.1953125, 1.1523438)
+sprite_frames = ExtResource("2_fpnag")
+
+[node name="Sprite2D_Sun" type="Sprite2D" parent="."]
+position = Vector2(148, 130)
+
+[node name="Sprite2D_Planet" type="Sprite2D" parent="."]
+position = Vector2(54, 219)
+
+[node name="Sprite2D_SpaceStation" type="Sprite2D" parent="."]
+
+[node name="Sprite2D_Asteroid" type="Sprite2D" parent="."]
+
+[node name="Sprite2D_Gateway" type="Sprite2D" parent="."]
