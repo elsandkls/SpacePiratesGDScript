@@ -18,7 +18,7 @@ public partial class Player : CharacterBody2D
     private string last_known_state;
       
     private int runBALOnce = 0;
-    private int CONST_Velocity = 10;
+    private int CONST_Velocity = 25;
     private bool CONST_Damaged = false;
 
     public override void _Ready()

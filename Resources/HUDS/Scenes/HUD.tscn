@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cinqdd0drq62k"]
+[gd_scene load_steps=12 format=3 uid="uid://cinqdd0drq62k"]
 
 [ext_resource type="PackedScene" uid="uid://ccii7pprvq1fe" path="res://Resources/HUDS/Scenes/HUD_Core.tscn" id="1_lr76u"]
 [ext_resource type="PackedScene" uid="uid://bx4nvo8r4nlgo" path="res://Resources/HUDS/Scenes/HUD_Cockpit.tscn" id="2_qdyvv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jrdmp6du1m5g" path="res://Resources/HUDS/Scenes/HUD_Engines.tscn" id="4_7aron"]
 [ext_resource type="PackedScene" uid="uid://ci367hv2ua7ep" path="res://Resources/HUDS/Scenes/HUD_Weapons.tscn" id="5_21yge"]
 [ext_resource type="PackedScene" uid="uid://bb05mma3fbw4l" path="res://Resources/HUDS/Scenes/HUD_ShipBuilder.tscn" id="6_by1c4"]
+[ext_resource type="PackedScene" uid="uid://dgb0hthxsnyfd" path="res://Resources/HUDS/Scenes/HUD_GateTravel.tscn" id="7_qdyvv"]
 [ext_resource type="PackedScene" uid="uid://dudjgquwdik20" path="res://Resources/HUDS/Scenes/HUD_SolarSystem.tscn" id="7_xv8qg"]
 [ext_resource type="PackedScene" uid="uid://bs6gomwmtscpg" path="res://Resources/HUDS/Scenes/HUD_AsteroidBelt.tscn" id="8_gtpqo"]
 [ext_resource type="PackedScene" uid="uid://c42mj8oyq0cp6" path="res://Resources/HUDS/Scenes/HUD_SpaceStation.tscn" id="9_cswn0"]
@@ -19,57 +20,54 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(300, 1000)
+custom_minimum_size = Vector2(175, 1080)
 layout_mode = 2
 
 [node name="BoxContainer" type="BoxContainer" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(195, 215)
 layout_mode = 2
 
 [node name="HudCore" parent="HBoxContainer/VBoxContainer2/BoxContainer" instance=ExtResource("1_lr76u")]
+scale = Vector2(0.75, 0.75)
 
 [node name="BoxContainer2" type="BoxContainer" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(195, 215)
 layout_mode = 2
 
 [node name="HudCockpit" parent="HBoxContainer/VBoxContainer2/BoxContainer2" instance=ExtResource("2_qdyvv")]
 position = Vector2(0, -4)
+scale = Vector2(0.75, 0.75)
 
 [node name="BoxContainer3" type="BoxContainer" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(195, 215)
 layout_mode = 2
 
 [node name="HudCargo" parent="HBoxContainer/VBoxContainer2/BoxContainer3" instance=ExtResource("3_bsvc0")]
 position = Vector2(0, -8)
+scale = Vector2(0.75, 0.75)
 
 [node name="BoxContainer4" type="BoxContainer" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(195, 215)
 layout_mode = 2
 
 [node name="HudEngines" parent="HBoxContainer/VBoxContainer2/BoxContainer4" instance=ExtResource("4_7aron")]
 position = Vector2(0, -12)
+scale = Vector2(0.75, 0.75)
 
 [node name="BoxContainer5" type="BoxContainer" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(195, 215)
 layout_mode = 2
 
 [node name="HudWeapons" parent="HBoxContainer/VBoxContainer2/BoxContainer5" instance=ExtResource("5_21yge")]
 position = Vector2(0, -16)
-
-[node name="BoxContainer6" type="BoxContainer" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(250, 250)
-layout_mode = 2
-
-[node name="BoxContainer7" type="BoxContainer" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(250, 250)
-layout_mode = 2
+scale = Vector2(0.75, 0.75)
 
 [node name="BoxContainer" type="BoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(1200, 1000)
+custom_minimum_size = Vector2(1325, 1080)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(300, 1000)
+custom_minimum_size = Vector2(260, 1000)
 layout_mode = 2
 
 [node name="BoxContainer" type="BoxContainer" parent="HBoxContainer/VBoxContainer"]
@@ -77,39 +75,43 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 
 [node name="HudSolarSystem" parent="HBoxContainer/VBoxContainer/BoxContainer" instance=ExtResource("7_xv8qg")]
-position = Vector2(-8, 0)
 
 [node name="BoxContainer2" type="BoxContainer" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 
-[node name="HudAsteroidBelt" parent="HBoxContainer/VBoxContainer/BoxContainer2" instance=ExtResource("8_gtpqo")]
-position = Vector2(-8, -4)
+[node name="HudGateTravel" parent="HBoxContainer/VBoxContainer/BoxContainer2" instance=ExtResource("7_qdyvv")]
+visible = false
 
 [node name="BoxContainer3" type="BoxContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 
 [node name="HudSpaceStation" parent="HBoxContainer/VBoxContainer/BoxContainer3" instance=ExtResource("9_cswn0")]
-position = Vector2(-8, -8)
 
 [node name="BoxContainer4" type="BoxContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 
 [node name="HudPirateBase" parent="HBoxContainer/VBoxContainer/BoxContainer4" instance=ExtResource("10_2146j")]
-position = Vector2(-8, -12)
 
 [node name="BoxContainer5" type="BoxContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 
-[node name="HudShipBuilder" parent="HBoxContainer/VBoxContainer/BoxContainer5" instance=ExtResource("6_by1c4")]
+[node name="HudAsteroidBelt" parent="HBoxContainer/VBoxContainer/BoxContainer5" instance=ExtResource("8_gtpqo")]
 
 [node name="BoxContainer6" type="BoxContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 
+[node name="HudShipBuilder" parent="HBoxContainer/VBoxContainer/BoxContainer6" instance=ExtResource("6_by1c4")]
+
 [node name="BoxContainer7" type="BoxContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2

@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci367hv2ua7ep"]
+[gd_scene load_steps=16 format=3 uid="uid://ci367hv2ua7ep"]
 
 [ext_resource type="Script" uid="uid://owpvyxqgd7p" path="res://Resources/HUDS/Scripts/hud_weapons.cs" id="1_8bsn6"]
 [ext_resource type="SpriteFrames" uid="uid://cxjm46nalijdw" path="res://Resources/HUDS/Animations/HUD_Weapons.tres" id="2_eyr03"]
-[ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://Resources/HUDS/ArtAssets/UnderBar.png" id="4_a74fw"]
-[ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://Resources/HUDS/ArtAssets/OverBar.png" id="5_qlu7v"]
-[ext_resource type="Texture2D" uid="uid://digr0dmc82gh5" path="res://Resources/HUDS/ArtAssets/ProgressBar.png" id="6_qdbh6"]
+[ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://Resources/HUDS/ArtAssets/LoadingBars/Energy_UnderBar.png" id="4_a74fw"]
+[ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://Resources/HUDS/ArtAssets/LoadingBars/Energy_OverBar.png" id="5_qlu7v"]
+[ext_resource type="Texture2D" uid="uid://bkjwi2a4koth7" path="res://Resources/HUDS/ArtAssets/LoadingBars/Damage_UnderBar.png" id="6_fyg8b"]
+[ext_resource type="Texture2D" uid="uid://digr0dmc82gh5" path="res://Resources/HUDS/ArtAssets/LoadingBars/Energy_ProgressBar.png" id="6_qdbh6"]
 [ext_resource type="SpriteFrames" uid="uid://p6k8pnqjyb6y" path="res://Resources/HUDS/Scenes/Numbers.tres" id="6_rtimg"]
+[ext_resource type="Texture2D" uid="uid://bjxhqnarh1aka" path="res://Resources/HUDS/ArtAssets/ICONS/15.png" id="7_b0s3q"]
+[ext_resource type="Texture2D" uid="uid://dod8l8udco0kx" path="res://Resources/HUDS/ArtAssets/LoadingBars/Damage_OverBar.png" id="7_m40vs"]
+[ext_resource type="Texture2D" uid="uid://tp58mu4yxwr0" path="res://Resources/HUDS/ArtAssets/LoadingBars/Damage_ProgressBar.png" id="8_b2035"]
+[ext_resource type="Texture2D" uid="uid://wpbx45o558i3" path="res://Resources/HUDS/ArtAssets/ICONS/8.png" id="8_bobob"]
+[ext_resource type="Texture2D" uid="uid://dsk6ardd3o68b" path="res://Resources/HUDS/ArtAssets/Hud_BG_Panel/FacePlateHuds.png" id="12_m40vs"]
+[ext_resource type="Texture2D" uid="uid://dsne2f40fhjof" path="res://Resources/Buttons/ArtAssets/placeholder_button_120_60_Disabled.png" id="13_aq5tf"]
+[ext_resource type="Texture2D" uid="uid://c8egf8u4x8nsv" path="res://Resources/Buttons/ArtAssets/placeholder_button_120_60_Hover.png" id="14_or6hy"]
+[ext_resource type="Texture2D" uid="uid://c10aebykw6nnd" path="res://Resources/Buttons/ArtAssets/placeholder_bg_black_60_60.png" id="15_xfsay"]
 
 [node name="HudWeapons" type="Node2D"]
 script = ExtResource("1_8bsn6")
@@ -14,22 +23,33 @@ script = ExtResource("1_8bsn6")
 sprite_frames = ExtResource("2_eyr03")
 centered = false
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="."]
-offset_left = 14.0
-offset_top = 163.0
+[node name="TextureProgressBar_Energy" type="TextureProgressBar" parent="."]
+offset_left = 56.0
+offset_top = 171.0
 offset_right = 247.0
-offset_bottom = 202.0
+offset_bottom = 210.0
 fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("4_a74fw")
 texture_over = ExtResource("5_qlu7v")
 texture_progress = ExtResource("6_qdbh6")
 
+[node name="TextureProgressBar_Damage" type="TextureProgressBar" parent="."]
+offset_left = 56.0
+offset_top = 209.0
+offset_right = 247.0
+offset_bottom = 248.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("6_fyg8b")
+texture_over = ExtResource("7_m40vs")
+texture_progress = ExtResource("8_b2035")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = 28.0
-offset_top = 29.0
+offset_top = 20.0
 offset_right = 231.0
-offset_bottom = 145.0
+offset_bottom = 132.0
 
 [node name="BoxContainer" type="BoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(65, 0)
@@ -63,3 +83,73 @@ scale = Vector2(1.4285715, 1.9298246)
 sprite_frames = ExtResource("6_rtimg")
 animation = &"0"
 centered = false
+
+[node name="EnergyIcon" type="Sprite2D" parent="."]
+position = Vector2(35, 190)
+scale = Vector2(0.32812503, 0.2968749)
+texture = ExtResource("7_b0s3q")
+
+[node name="RepairIcon" type="Sprite2D" parent="."]
+position = Vector2(35, 228.49998)
+scale = Vector2(0.328125, 0.30468738)
+texture = ExtResource("8_bobob")
+
+[node name="Sprite2D_FacePlate" type="Sprite2D" parent="."]
+texture = ExtResource("12_m40vs")
+centered = false
+
+[node name="TextureButton_ON" type="TextureButton" parent="."]
+offset_left = 15.0
+offset_top = 138.0
+offset_right = 132.0
+offset_bottom = 173.0
+texture_normal = ExtResource("13_aq5tf")
+texture_pressed = ExtResource("14_or6hy")
+texture_disabled = ExtResource("15_xfsay")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel_ON" type="RichTextLabel" parent="TextureButton_ON"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -11.0
+offset_right = 111.0
+offset_bottom = 43.0
+theme_override_font_sizes/normal_font_size = 36
+text = "ON"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton_OFF" type="TextureButton" parent="."]
+offset_left = 133.0
+offset_top = 137.0
+offset_right = 247.0
+offset_bottom = 173.0
+disabled = true
+texture_normal = ExtResource("13_aq5tf")
+texture_pressed = ExtResource("14_or6hy")
+texture_disabled = ExtResource("15_xfsay")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel_OFF" type="RichTextLabel" parent="TextureButton_OFF"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -7.0
+offset_right = 107.0
+offset_bottom = 42.0
+theme_override_font_sizes/normal_font_size = 36
+text = "OFF"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HUD_RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 255.0
+offset_right = 257.0
+offset_bottom = 289.0
+text = "WEAPONS COMPARTMENT"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

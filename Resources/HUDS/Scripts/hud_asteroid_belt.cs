@@ -6,6 +6,8 @@ public partial class HudAsteroidBelt : Node2D
 {   
     public override void _Ready()
     {
+        
+        
     }
 
 }

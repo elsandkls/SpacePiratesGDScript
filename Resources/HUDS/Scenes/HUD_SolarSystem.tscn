@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dudjgquwdik20"]
+[gd_scene load_steps=5 format=3 uid="uid://dudjgquwdik20"]
 
 [ext_resource type="Script" uid="uid://d1woif0t8gav3" path="res://Resources/HUDS/Scripts/hud_solar_system.cs" id="1_tgrcu"]
 [ext_resource type="SpriteFrames" uid="uid://p3jju66a0cc6" path="res://Resources/HUDS/Animations/HUD_SolarSystem.tres" id="2_wc8e7"]
 [ext_resource type="SpriteFrames" uid="uid://p6k8pnqjyb6y" path="res://Resources/HUDS/Scenes/Numbers.tres" id="3_oldue"]
+[ext_resource type="Texture2D" uid="uid://dsk6ardd3o68b" path="res://Resources/HUDS/ArtAssets/Hud_BG_Panel/FacePlateHuds.png" id="4_ba285"]
 
 [node name="HudSolarSystem" type="Node2D"]
 script = ExtResource("1_tgrcu")
@@ -49,4 +50,18 @@ position = Vector2(2.9999998, 0)
 scale = Vector2(1.4285715, 1.9298246)
 sprite_frames = ExtResource("3_oldue")
 animation = &"0"
+centered = false
+
+[node name="RichTextLabel_NAME" type="RichTextLabel" parent="."]
+offset_top = 138.0
+offset_right = 256.0
+offset_bottom = 246.0
+theme_override_font_sizes/normal_font_size = 36
+text = "NAME"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D_FacePlate" type="Sprite2D" parent="."]
+texture = ExtResource("4_ba285")
 centered = false

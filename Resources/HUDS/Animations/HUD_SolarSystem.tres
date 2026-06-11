@@ -1,12 +1,12 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://p3jju66a0cc6"]
 
-[ext_resource type="Texture2D" uid="uid://cpa4j77nvrtp6" path="res://Resources/HUDS/ArtAssets/SolarSystemHuds.png" id="1_1mdgb"]
+[ext_resource type="Texture2D" uid="uid://drlpgdt574ctt" path="res://Resources/HUDS/ArtAssets/Hud_BG_Panel/BackgroundHuds.png" id="1_wxugv"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_1mdgb")
+"texture": ExtResource("1_wxugv")
 }],
 "loop": true,
 "name": &"default",

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cj5mk5fv6sodg"]
+[gd_scene load_steps=8 format=4 uid="uid://cj5mk5fv6sodg"]
 
 [ext_resource type="Script" uid="uid://corgt3x7cfvk5" path="res://Resources/SolarSystems/Scripts/SolarSystem.cs" id="1_3c2cb"]
 [ext_resource type="TileSet" uid="uid://gtwin4jjlmjx" path="res://Resources/SolarSystems/Animations/SolarSystem_Star_Background.tres" id="2_ly37o"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://djp0jdhk5db01" path="res://Resources/Planets/Scenes/LargePlanet.tscn" id="5_arusa"]
 [ext_resource type="PackedScene" uid="uid://b3x4eu0mjcklc" path="res://Resources/SpaceStations/Scenes/SpaceStation.tscn" id="6_gtb1h"]
 [ext_resource type="PackedScene" uid="uid://423e2j1uj313" path="res://Resources/Player/Scenes/Player.tscn" id="7_8yixc"]
-[ext_resource type="PackedScene" uid="uid://cinqdd0drq62k" path="res://Resources/HUDS/Scenes/HUD.tscn" id="8_ly37o"]
 
 [node name="SolarSystem" type="Node2D"]
 script = ExtResource("1_3c2cb")
@@ -33,5 +32,3 @@ scale = Vector2(0.2, 0.2)
 [node name="Player" parent="." instance=ExtResource("7_8yixc")]
 position = Vector2(640.99994, 964)
 scale = Vector2(0.2, 0.2)
-
-[node name="Hud" parent="." instance=ExtResource("8_ly37o")]

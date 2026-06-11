@@ -1,12 +1,12 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cxjm46nalijdw"]
 
-[ext_resource type="Texture2D" uid="uid://qdnn7mt8wusp" path="res://Resources/HUDS/ArtAssets/WeaponsHuds.png" id="1_x5iy5"]
+[ext_resource type="Texture2D" uid="uid://drlpgdt574ctt" path="res://Resources/HUDS/ArtAssets/Hud_BG_Panel/BackgroundHuds.png" id="1_jatoh"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_x5iy5")
+"texture": ExtResource("1_jatoh")
 }],
 "loop": true,
 "name": &"default",

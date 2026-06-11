@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://jrdmp6du1m5g"]
+[gd_scene load_steps=16 format=3 uid="uid://jrdmp6du1m5g"]
 
 [ext_resource type="Script" uid="uid://gygevbiauwfb" path="res://Resources/HUDS/Scripts/hud_engines.cs" id="1_a7jf7"]
 [ext_resource type="SpriteFrames" uid="uid://dpsdtmncviptt" path="res://Resources/HUDS/Animations/HUD_Engines.tres" id="2_mq632"]
-[ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://Resources/HUDS/ArtAssets/UnderBar.png" id="3_llav8"]
-[ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://Resources/HUDS/ArtAssets/OverBar.png" id="4_iebx1"]
-[ext_resource type="Texture2D" uid="uid://digr0dmc82gh5" path="res://Resources/HUDS/ArtAssets/ProgressBar.png" id="5_6vlqs"]
+[ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://Resources/HUDS/ArtAssets/LoadingBars/Energy_UnderBar.png" id="3_llav8"]
+[ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://Resources/HUDS/ArtAssets/LoadingBars/Energy_OverBar.png" id="4_iebx1"]
+[ext_resource type="Texture2D" uid="uid://digr0dmc82gh5" path="res://Resources/HUDS/ArtAssets/LoadingBars/Energy_ProgressBar.png" id="5_6vlqs"]
 [ext_resource type="SpriteFrames" uid="uid://p6k8pnqjyb6y" path="res://Resources/HUDS/Scenes/Numbers.tres" id="6_gr1bq"]
+[ext_resource type="Texture2D" uid="uid://bkjwi2a4koth7" path="res://Resources/HUDS/ArtAssets/LoadingBars/Damage_UnderBar.png" id="7_0jflm"]
+[ext_resource type="Texture2D" uid="uid://dod8l8udco0kx" path="res://Resources/HUDS/ArtAssets/LoadingBars/Damage_OverBar.png" id="8_ox2by"]
+[ext_resource type="Texture2D" uid="uid://tp58mu4yxwr0" path="res://Resources/HUDS/ArtAssets/LoadingBars/Damage_ProgressBar.png" id="9_4doxw"]
+[ext_resource type="Texture2D" uid="uid://bjxhqnarh1aka" path="res://Resources/HUDS/ArtAssets/ICONS/15.png" id="10_3u2bs"]
+[ext_resource type="Texture2D" uid="uid://wpbx45o558i3" path="res://Resources/HUDS/ArtAssets/ICONS/8.png" id="11_ukhw2"]
+[ext_resource type="Texture2D" uid="uid://dsk6ardd3o68b" path="res://Resources/HUDS/ArtAssets/Hud_BG_Panel/FacePlateHuds.png" id="12_ox2by"]
+[ext_resource type="Texture2D" uid="uid://dsne2f40fhjof" path="res://Resources/Buttons/ArtAssets/placeholder_button_120_60_Disabled.png" id="13_ukhw2"]
+[ext_resource type="Texture2D" uid="uid://c8egf8u4x8nsv" path="res://Resources/Buttons/ArtAssets/placeholder_button_120_60_Hover.png" id="14_oe0u4"]
+[ext_resource type="Texture2D" uid="uid://c10aebykw6nnd" path="res://Resources/Buttons/ArtAssets/placeholder_bg_black_60_60.png" id="15_26p83"]
 
 [node name="HudEngines" type="Node2D"]
 script = ExtResource("1_a7jf7")
@@ -14,22 +23,11 @@ script = ExtResource("1_a7jf7")
 sprite_frames = ExtResource("2_mq632")
 centered = false
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = 16.0
-offset_top = 181.0
-offset_right = 248.0
-offset_bottom = 209.0
-fill_mode = 3
-nine_patch_stretch = true
-texture_under = ExtResource("3_llav8")
-texture_over = ExtResource("4_iebx1")
-texture_progress = ExtResource("5_6vlqs")
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = 30.0
-offset_top = 34.0
+offset_top = 18.0
 offset_right = 233.0
-offset_bottom = 168.0
+offset_bottom = 131.0
 
 [node name="BoxContainer" type="BoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(65, 0)
@@ -63,3 +61,95 @@ scale = Vector2(1.4285715, 1.9298246)
 sprite_frames = ExtResource("6_gr1bq")
 animation = &"0"
 centered = false
+
+[node name="TextureProgressBar_Energy" type="TextureProgressBar" parent="."]
+offset_left = 56.0
+offset_top = 171.0
+offset_right = 247.0
+offset_bottom = 210.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("3_llav8")
+texture_over = ExtResource("4_iebx1")
+texture_progress = ExtResource("5_6vlqs")
+
+[node name="TextureProgressBar_Damage" type="TextureProgressBar" parent="."]
+offset_left = 56.0
+offset_top = 209.0
+offset_right = 247.0
+offset_bottom = 248.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("7_0jflm")
+texture_over = ExtResource("8_ox2by")
+texture_progress = ExtResource("9_4doxw")
+
+[node name="EnergyIcon" type="Sprite2D" parent="."]
+position = Vector2(35, 190)
+scale = Vector2(0.32812503, 0.2968749)
+texture = ExtResource("10_3u2bs")
+
+[node name="RepairIcon" type="Sprite2D" parent="."]
+position = Vector2(35, 228.49998)
+scale = Vector2(0.328125, 0.30468738)
+texture = ExtResource("11_ukhw2")
+
+[node name="Sprite2D_FacePlate" type="Sprite2D" parent="."]
+texture = ExtResource("12_ox2by")
+centered = false
+
+[node name="TextureButton_ON" type="TextureButton" parent="."]
+offset_left = 15.0
+offset_top = 138.0
+offset_right = 132.0
+offset_bottom = 173.0
+texture_normal = ExtResource("13_ukhw2")
+texture_pressed = ExtResource("14_oe0u4")
+texture_disabled = ExtResource("15_26p83")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel_ON" type="RichTextLabel" parent="TextureButton_ON"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -11.0
+offset_right = 111.0
+offset_bottom = 43.0
+theme_override_font_sizes/normal_font_size = 36
+text = "ON"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton_OFF" type="TextureButton" parent="."]
+offset_left = 133.0
+offset_top = 137.0
+offset_right = 247.0
+offset_bottom = 173.0
+disabled = true
+texture_normal = ExtResource("13_ukhw2")
+texture_pressed = ExtResource("14_oe0u4")
+texture_disabled = ExtResource("15_26p83")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel_OFF" type="RichTextLabel" parent="TextureButton_OFF"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -7.0
+offset_right = 107.0
+offset_bottom = 42.0
+theme_override_font_sizes/normal_font_size = 36
+text = "OFF"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HUD_RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 255.0
+offset_right = 257.0
+offset_bottom = 289.0
+text = "ENGINE COMPARTMENT"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

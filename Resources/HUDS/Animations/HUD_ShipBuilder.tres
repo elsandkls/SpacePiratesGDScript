@@ -1,12 +1,12 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dijrcftws1duk"]
 
-[ext_resource type="Texture2D" uid="uid://1i8up8xvvete" path="res://Resources/HUDS/ArtAssets/ShipBuilderHuds.png" id="1_yiuha"]
+[ext_resource type="Texture2D" uid="uid://drlpgdt574ctt" path="res://Resources/HUDS/ArtAssets/Hud_BG_Panel/BackgroundHuds.png" id="1_swr1g"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_yiuha")
+"texture": ExtResource("1_swr1g")
 }],
 "loop": true,
 "name": &"default",

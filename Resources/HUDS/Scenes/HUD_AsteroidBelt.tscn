@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs6gomwmtscpg"]
+[gd_scene load_steps=5 format=3 uid="uid://bs6gomwmtscpg"]
 
 [ext_resource type="Script" uid="uid://cnjlurkoh4mmo" path="res://Resources/HUDS/Scripts/hud_asteroid_belt.cs" id="1_sdfsj"]
 [ext_resource type="SpriteFrames" uid="uid://dbbei4osp4vmj" path="res://Resources/HUDS/Animations/HUD_AsteroidBelt.tres" id="2_imfpi"]
+[ext_resource type="Texture2D" uid="uid://cu6fg5abwwls" path="res://Resources/SolarSystems/ArtAssets/defeat_0004_planet.png" id="3_ga054"]
+[ext_resource type="Texture2D" uid="uid://dsk6ardd3o68b" path="res://Resources/HUDS/ArtAssets/Hud_BG_Panel/FacePlateHuds.png" id="4_m4nx4"]
 
 [node name="HudAsteroidBelt" type="Node2D"]
 script = ExtResource("1_sdfsj")
 
 [node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_imfpi")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(125, 105)
+texture = ExtResource("3_ga054")
+
+[node name="Sprite2D_FacePlate" type="Sprite2D" parent="."]
+texture = ExtResource("4_m4nx4")
 centered = false
