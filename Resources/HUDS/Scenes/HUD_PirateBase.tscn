@@ -11,13 +11,15 @@ script = ExtResource("1_28lm6")
 
 [node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_pigi8")
+centered = false
 
 [node name="AnimatedSprite2D_ICON" type="AnimatedSprite2D" parent="."]
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_top = -91.0
-offset_right = 55.0
-offset_bottom = 102.0
+offset_left = 16.0
+offset_top = 167.0
+offset_right = 247.0
+offset_bottom = 202.0
 fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("3_fx1qd")

@@ -8,3 +8,4 @@ script = ExtResource("1_sdfsj")
 
 [node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_imfpi")
+centered = false

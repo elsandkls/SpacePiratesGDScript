@@ -2,29 +2,64 @@
 
 [ext_resource type="Script" uid="uid://owpvyxqgd7p" path="res://Resources/HUDS/Scripts/hud_weapons.cs" id="1_8bsn6"]
 [ext_resource type="SpriteFrames" uid="uid://cxjm46nalijdw" path="res://Resources/HUDS/Animations/HUD_Weapons.tres" id="2_eyr03"]
-[ext_resource type="SpriteFrames" uid="uid://dj3ybhpqcqmis" path="res://Resources/HUDS/Scenes/ICONS/HUD_Weapons_ICON_Base.tres" id="3_7yl44"]
 [ext_resource type="Texture2D" uid="uid://biesr1iuhh6k2" path="res://Resources/HUDS/ArtAssets/UnderBar.png" id="4_a74fw"]
 [ext_resource type="Texture2D" uid="uid://bj4vwgae1g32f" path="res://Resources/HUDS/ArtAssets/OverBar.png" id="5_qlu7v"]
 [ext_resource type="Texture2D" uid="uid://digr0dmc82gh5" path="res://Resources/HUDS/ArtAssets/ProgressBar.png" id="6_qdbh6"]
+[ext_resource type="SpriteFrames" uid="uid://p6k8pnqjyb6y" path="res://Resources/HUDS/Scenes/Numbers.tres" id="6_rtimg"]
 
 [node name="HudWeapons" type="Node2D"]
 script = ExtResource("1_8bsn6")
 
 [node name="AnimatedSprite2D_BG" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_eyr03")
+centered = false
 
-[node name="AnimatedSprite2D_ICON" type="AnimatedSprite2D" parent="."]
-position = Vector2(-54.25, 1.75)
-scale = Vector2(1.42, 2.14)
-sprite_frames = ExtResource("3_7yl44")
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = 13.0
-offset_top = -94.0
-offset_right = 80.0
-offset_bottom = 100.0
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="."]
+offset_left = 14.0
+offset_top = 163.0
+offset_right = 247.0
+offset_bottom = 202.0
 fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("4_a74fw")
 texture_over = ExtResource("5_qlu7v")
 texture_progress = ExtResource("6_qdbh6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 28.0
+offset_top = 29.0
+offset_right = 231.0
+offset_bottom = 145.0
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+
+[node name="Hundreds_AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/BoxContainer"]
+position = Vector2(7.9999995, 0)
+scale = Vector2(1.4285715, 1.9298245)
+sprite_frames = ExtResource("6_rtimg")
+animation = &"0"
+centered = false
+
+[node name="BoxContainer2" type="BoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+
+[node name="Tens_AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/BoxContainer2"]
+position = Vector2(7.000004, -1)
+scale = Vector2(1.3999999, 1.9473685)
+sprite_frames = ExtResource("6_rtimg")
+animation = &"0"
+centered = false
+
+[node name="BoxContainer3" type="BoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+
+[node name="Ones_AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/BoxContainer3"]
+position = Vector2(2.9999998, 0)
+scale = Vector2(1.4285715, 1.9298246)
+sprite_frames = ExtResource("6_rtimg")
+animation = &"0"
+centered = false
