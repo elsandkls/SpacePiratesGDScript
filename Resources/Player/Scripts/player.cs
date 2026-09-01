@@ -7,8 +7,11 @@ public partial class Player : CharacterBody2D
 {    
     
     [ExportGroup("Required Nodes")]
-     private AnimationPlayer animationPlayerNode;
-     private AnimatedSprite2D PlayerAnimSprite2D;   
+     private AnimatedSprite2D AnimSprite2D_Movement;
+     private AnimatedSprite2D AnimSprite2D_Damaged;
+     private AnimatedSprite2D AnimSprite2D_Healing;
+     private AnimatedSprite2D AnimSprite2D_Docking;
+     private AnimationPlayer AnimationPlayer;   
      
     public GameData gameData;
     private string ClassName = "Player|CharacterBody2D";
@@ -18,8 +21,36 @@ public partial class Player : CharacterBody2D
     private string last_known_state;
       
     private int runBALOnce = 0;
-    private int CONST_Velocity = 25;
-    private bool CONST_Damaged = false;
+    private int CONST_VELOCITY = 25;
+    private bool CONST_DAMAGED = false;
+    private bool CONST_HEALING = false;
+    private bool CONST_IDLE = false;
+    private bool CONST_NORMAL = false;
+    private bool CONST_MOVEMENT = false;
+    private bool CONST_STATIONARY = false;
+    private bool CONST_DOCKING = false;
+
+    
+    string DIRECTION_RIGHT = "";
+    string DIRECTION_LEFT = "";
+    string DIRECTION_UP = "";
+    string DIRECTION_DOWN = "";
+    
+    int DIRECTION_RIGHT_ANGLE = 0;
+    int DIRECTION_LEFT_ANGLE = 0;
+    int DIRECTION_UP_ANGLE = 0;
+    int DIRECTION_DOWN_ANGLE = 0;
+
+    string STATE_IDLE = "";
+    string STATE_MOVEMENT = "";
+    string STATE_NORMAL = "";
+    string STATE_DAMAGED = "";
+    string STATE_HEALING = "";
+    string STATE_STATIONARY = "";
+    string STATE_DOCKING = "";
+
+    int DAMAGED_LEVEL = 0;
+
 
     public override void _Ready()
     {
@@ -31,21 +62,25 @@ public partial class Player : CharacterBody2D
 
         GD.Print("Scene path: ", GetSceneFilePath());
         GD.Print("Children: ", GetChildren());
-        GetTree().Root.PrintTreePretty();
-
-        PlayerAnimSprite2D =  GetNode<AnimatedSprite2D>("PlayerAnimSprite2D");  
-        animationPlayerNode = GetNode<AnimationPlayer>("AnimationPlayer");
+        GetTree().Root.PrintTreePretty(); 
+        AnimSprite2D_Movement =  GetNode<AnimatedSprite2D>("AnimSprite2D_Movement");  
+        AnimSprite2D_Damaged =  GetNode<AnimatedSprite2D>("AnimSprite2D_Damaged"); 
+        AnimSprite2D_Healing =  GetNode<AnimatedSprite2D>("AnimSprite2D_Healing"); 
+        AnimSprite2D_Docking  =  GetNode<AnimatedSprite2D>("AnimSprite2D_Docking"); 
+        AnimationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 
         last_known_direction = gameData.Get_PlayerDirection();
         if (runBALOnce < 1)
         { 
-            BuildAnimationLibrary();
+            BuildAnimationLibrary(AnimSprite2D_Movement);
+            BuildAnimationLibrary(AnimSprite2D_Damaged);
+            BuildAnimationLibrary(AnimSprite2D_Healing);
+            BuildAnimationLibrary(AnimSprite2D_Docking);
             runBALOnce = runBALOnce + 1;
-        }
-        //AnimationFunction(gameData.GameConstants("ANIM_IDLE_LEFT"));
+        } 
     }
 
-    public void BuildAnimationLibrary()// Create a new animation
+    public void BuildAnimationLibrary(AnimatedSprite2D PlayerAnimSprite2D)// Create a new animation
     {
         var func_name = "BuildAnimationLibrary";
         if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] "); }
@@ -98,14 +133,14 @@ public partial class Player : CharacterBody2D
             // Register the AnimationLibrary under the AnimationPlayer
             if (animName != null && animLibrary != null)
             {
-                animationPlayerNode.AddAnimationLibrary(animName, animLibrary);
+                AnimationPlayer.AddAnimationLibrary(animName, animLibrary);
                 if (debug == 1) { GD.Print("AddAnimationLibrary [ " + animName + " ] "); } 
             }
             if (debug == 1) { GD.Print(" **************************************************** "); }
         }         
     }
 
-    public void AnimationFunction(string Direction, string AnimationLabel)// Create a new animation
+    public void AnimationFunction(string AnimationLabel, AnimatedSprite2D PlayerAnimSprite2D)// Create a new animation
     {
 
         var func_name = "AnimationFunction";
@@ -124,7 +159,7 @@ public partial class Player : CharacterBody2D
         if (FoundAnim == true)
         { 
             // Play it
-            animationPlayerNode.Play(AnimationLabel + "/" + AnimationLabel);            
+            AnimationPlayer.Play(AnimationLabel + "/" + AnimationLabel);            
             //animationPlayerNode.Play(AnimationLabel);
         }
         else
@@ -137,7 +172,7 @@ public partial class Player : CharacterBody2D
     {
         var func_name = "_PhysicsProcess"; 
         Velocity = new(direction.X, direction.Y);
-        Velocity *= CONST_Velocity;         
+        Velocity *= CONST_VELOCITY;         
         MoveAndSlide();
     } 
 
@@ -145,141 +180,171 @@ public partial class Player : CharacterBody2D
     public override void _Input(InputEvent @event)
     { 
         GameData gameData = GetNode<GameData>("/root/GameData");
-        GodotDict PlayerData = gameData.GetGodotData(); 
-        string DIRECTION_RIGHT = gameData.Get_DIRECTION_RIGHT();
-        string DIRECTION_LEFT = gameData.Get_DIRECTION_LEFT();
-        string DIRECTION_UP = gameData.Get_DIRECTION_UP();
-        string DIRECTION_DOWN = gameData.Get_DIRECTION_DOWN();
- 
-        string STATE_IDLE = gameData.Get_STATE_IDLE();
-        string STATE_MOVEMENT = gameData.Get_STATE_MOVEMENT();
+        GodotDict PlayerData = gameData.GetGodotData();
 
-        string STATE_NORMAL = gameData.Get_STATE_NORMAL();
-        string STATE_DAMAGED = gameData.Get_STATE_DAMAGED(); 
+        DIRECTION_RIGHT = gameData.Get_DIRECTION_RIGHT();
+        DIRECTION_LEFT = gameData.Get_DIRECTION_LEFT();
+        DIRECTION_UP = gameData.Get_DIRECTION_UP();
+        DIRECTION_DOWN = gameData.Get_DIRECTION_DOWN();
+        
+        DIRECTION_RIGHT_ANGLE = gameData.Get_DIRECTION_RIGHT_ANGLE();
+        DIRECTION_LEFT_ANGLE = gameData.Get_DIRECTION_LEFT_ANGLE();
+        DIRECTION_UP_ANGLE = gameData.Get_DIRECTION_UP_ANGLE();
+        DIRECTION_DOWN_ANGLE = gameData.Get_DIRECTION_DOWN_ANGLE();
+ 
+        STATE_IDLE = gameData.Get_STATE_IDLE();
+        STATE_MOVEMENT = gameData.Get_STATE_MOVEMENT();
+        STATE_STATIONARY = gameData.Get_STATE_STATIONARY(); 
+        STATE_DOCKING = gameData.Get_STATE_DOCKING(); 
+
+        STATE_NORMAL = gameData.Get_STATE_NORMAL();
+        STATE_DAMAGED = gameData.Get_STATE_DAMAGED(); 
+        STATE_HEALING = gameData.Get_STATE_HEALING();
+    
+        AnimSprite2D_Movement =  GetNode<AnimatedSprite2D>("AnimSprite2D_Movement");  
+        AnimSprite2D_Damaged =  GetNode<AnimatedSprite2D>("AnimSprite2D_Damaged"); 
+        AnimSprite2D_Healing =  GetNode<AnimatedSprite2D>("AnimSprite2D_Healing"); 
+        AnimSprite2D_Docking  =  GetNode<AnimatedSprite2D>("AnimSprite2D_Docking");
 
         direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+
+        string plaayer_path = GetPath(); 
+        CharacterBody2D player_ship = GetNodeOrNull<CharacterBody2D>(plaayer_path); 
+
+        if(CONST_HEALING == true)
+        {
+            AnimationFunction( "HEALING", AnimSprite2D_Healing );                     
+        } 
+        else
+        {
+            AnimationFunction( "NOT_HEALING", AnimSprite2D_Healing );             
+        }
+
+        if(CONST_DAMAGED == true)
+        {
+            if(DAMAGED_LEVEL == 1 )
+            {
+                AnimationFunction( "DAMAGED_V!", AnimSprite2D_Damaged );
+            }     
+            else if(DAMAGED_LEVEL == 2 )
+            {
+                AnimationFunction( "DAMAGED_V2", AnimSprite2D_Damaged );
+            }
+            else if(DAMAGED_LEVEL == 3 )
+            {
+                AnimationFunction( "DAMAGED_V3", AnimSprite2D_Damaged );
+            }             
+        } 
+        else
+        {
+            AnimationFunction( "NOT_DAMAGED", AnimSprite2D_Damaged );             
+        }
+
+        if(CONST_DOCKING == true)
+        {
+            AnimationFunction( "DOCKING", AnimSprite2D_Docking );                     
+        }
+        else
+        {
+            AnimationFunction( "NOT_DOCKING", AnimSprite2D_Docking );             
+        }
+        
+        if (direction.X == 0 && direction.Y == 0)        
+        { 
+            if(Velocity.X == 0) // moving
+            {
+                if(CONST_STATIONARY == true)
+                {
+                    AnimationFunction( "STATIONARY", AnimSprite2D_Movement );                     
+                }
+            }
+            else
+            {   
+                if(CONST_IDLE == true)
+                {
+                    AnimationFunction( "IDLE", AnimSprite2D_Movement );                     
+                } 
+            } 
+        }
+
         // Vector2.Left   = (-1, 0)
         // Vector2.Right  = ( 1, 0) 
- 
         if (direction.X > 0 && direction.Y == 0)
         {
-            if(CONST_Damaged == false)
+            if(Velocity.X > 0) // moving
             {
-                if(Velocity.X > 0)
+                player_ship.Rotate(DIRECTION_RIGHT_ANGLE);                
+                if(CONST_MOVEMENT == true)
                 {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_RIGHT, STATE_MOVEMENT, STATE_NORMAL);
-                    AnimationFunction(last_known_direction, last_known_state ); 
-                }
-                else
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_RIGHT, STATE_IDLE, STATE_NORMAL); 
-                    AnimationFunction(last_known_direction, last_known_state );                      
-                }
+                    AnimationFunction( "MOVEMENT", AnimSprite2D_Movement );                     
+                }  
             }
-            else // if(CONST_Damaged == true) 
-            { 
-                if(Velocity.X > 0)
+            else // not moving
+            {  
+                if(CONST_IDLE == true)
                 {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_RIGHT, STATE_MOVEMENT, STATE_DAMAGED);   
-                    AnimationFunction(last_known_direction, last_known_state );                 
-                }
-                else
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_RIGHT, STATE_IDLE, STATE_DAMAGED); 
-                    AnimationFunction(last_known_direction, last_known_state );                      
-                }
-            }    
-        }
-        else if (direction.X < 0 && direction.Y == 0)
-        {
-            if(CONST_Damaged == false)
-            {
-                if(Velocity.X > 0)
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_LEFT, STATE_MOVEMENT, STATE_NORMAL);
-                    AnimationFunction(last_known_direction, last_known_state ); 
-                }
-                else
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_LEFT, STATE_IDLE, STATE_NORMAL); 
-                    AnimationFunction(last_known_direction, last_known_state );                      
-                }
-            }
-            else // if(CONST_Damaged == true) 
-            { 
-                if(Velocity.X > 0)
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_LEFT, STATE_MOVEMENT, STATE_DAMAGED);   
-                    AnimationFunction(last_known_direction, last_known_state );                 
-                }
-                else
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_LEFT, STATE_IDLE, STATE_DAMAGED); 
-                    AnimationFunction(last_known_direction, last_known_state );                      
+                    AnimationFunction( "IDLE", AnimSprite2D_Movement );                     
                 }
             }    
         }
 
+        if (direction.X < 0 && direction.Y == 0)
+        { 
+            if(Velocity.X < 0)
+            {
+                player_ship.Rotate(DIRECTION_LEFT_ANGLE);                     
+                if(CONST_MOVEMENT == true)
+                {
+                    AnimationFunction( "MOVEMENT", AnimSprite2D_Movement );                     
+                }  
+            }
+            else
+            {   
+                if(CONST_IDLE == true)
+                {
+                    AnimationFunction( "IDLE", AnimSprite2D_Movement );                     
+                }  
+            }   
+        }
+ 
         // Vector2.Up     = ( 0,-1)
         // Vector2.Down   = ( 0, 1)
-        else if (direction.Y < 0 && direction.X == 0)
-        {
-            if(CONST_Damaged == false)
+        if (direction.Y > 0 && direction.X == 0)
+        { 
+            if(Velocity.Y > 0)
             {
-                if(Velocity.Y > 0)
+                player_ship.Rotate(DIRECTION_DOWN_ANGLE);                 
+                if(CONST_MOVEMENT == true)
                 {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_UP, STATE_MOVEMENT, STATE_NORMAL);
-                    AnimationFunction(last_known_direction, last_known_state ); 
-                }
-                else
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_UP, STATE_IDLE, STATE_NORMAL); 
-                    AnimationFunction(last_known_direction, last_known_state );                      
-                }
+                    AnimationFunction( "MOVEMENT", AnimSprite2D_Movement );                     
+                }  
             }
-            else // if(CONST_Damaged == true) 
-            { 
-                if(Velocity.Y > 0)
+            else
+            {     
+                if(CONST_IDLE == true)
                 {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_UP, STATE_MOVEMENT, STATE_DAMAGED);   
-                    AnimationFunction(last_known_direction, last_known_state );                 
-                }
-                else
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_UP, STATE_IDLE, STATE_DAMAGED); 
-                    AnimationFunction(last_known_direction, last_known_state );                      
-                }
-            }    
+                    AnimationFunction( "IDLE", AnimSprite2D_Movement );                     
+                }   
+            }  
         }
-        else if (direction.Y > 0 && direction.X == 0)
-        {
-           
-            if(CONST_Damaged == false)
+
+        if (direction.Y < 0 && direction.X == 0)
+        { 
+            if(Velocity.Y < 0)
             {
-                if(Velocity.Y > 0)
+                player_ship.Rotate(DIRECTION_UP_ANGLE);                  
+                if(CONST_MOVEMENT == true)
                 {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_DOWN, STATE_MOVEMENT, STATE_NORMAL);
-                    AnimationFunction(last_known_direction, last_known_state ); 
-                }
-                else
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_DOWN, STATE_IDLE, STATE_NORMAL); 
-                    AnimationFunction(last_known_direction, last_known_state );                      
-                }
+                    AnimationFunction( "MOVEMENT", AnimSprite2D_Movement );                     
+                }  
             }
-            else // if(CONST_Damaged == true) 
-            { 
-                if(Velocity.Y > 0)
+            else
+            {   
+                if(CONST_IDLE == true)
                 {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_DOWN, STATE_MOVEMENT, STATE_DAMAGED);   
-                    AnimationFunction(last_known_direction, last_known_state );                 
-                }
-                else
-                {
-                    (last_known_direction, last_known_state) = gameData.GameConstants(DIRECTION_DOWN, STATE_IDLE, STATE_DAMAGED); 
-                    AnimationFunction(last_known_direction, last_known_state );                      
-                }
-            }    
+                    AnimationFunction( "IDLE", AnimSprite2D_Movement );                     
+                }         
+            }   
         }
  
     }

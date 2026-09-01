@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bt8mtc55wvkl4"]
+
+[ext_resource type="Texture2D" uid="uid://ck1wn5xrwroto" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_healing_green.png" id="1_h3wpc"]
+[ext_resource type="Texture2D" uid="uid://bkb1cv45c6tdw" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_healing_green_v2.png" id="2_4vy2n"]
+[ext_resource type="Texture2D" uid="uid://dndjuy7awt01e" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_not_healing_green.png" id="3_fl344"]
+[ext_resource type="Texture2D" uid="uid://c7jemyni4qmn5" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_not_healing_green_v2.png" id="4_kjmlw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h3wpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4vy2n")
+}],
+"loop": true,
+"name": &"HEALING",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fl344")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kjmlw")
+}],
+"loop": true,
+"name": &"NOT_HEALING",
+"speed": 5.0
+}]

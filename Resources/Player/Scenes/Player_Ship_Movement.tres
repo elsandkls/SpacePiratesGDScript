@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://d1i7mvyoaslvl"]
+
+[ext_resource type="Texture2D" uid="uid://2xor0r6vh7cc" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_movement_orange.png" id="1_tureb"]
+[ext_resource type="Texture2D" uid="uid://cwjyi06du760m" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_idle_green.png" id="1_vuxmt"]
+[ext_resource type="Texture2D" uid="uid://br3maf7cei3qe" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_idle_green_v2.png" id="2_t6nw0"]
+[ext_resource type="Texture2D" uid="uid://bfma3c2ma0xer" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_movement_orange_v2.png" id="2_yd4a0"]
+[ext_resource type="Texture2D" uid="uid://c1a0t1gdhq237" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_stationary_yellow.png" id="5_1t476"]
+[ext_resource type="Texture2D" uid="uid://b0n3odqb3rp6u" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_stationary_yellow_v2.png" id="6_rsdtc"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vuxmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t6nw0")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tureb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yd4a0")
+}],
+"loop": true,
+"name": &"MOVEMENT",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1t476")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rsdtc")
+}],
+"loop": true,
+"name": &"STATIONARY",
+"speed": 5.0
+}]

@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://b0uq5qdu3ge20"]
+
+[ext_resource type="Texture2D" uid="uid://bhwltckmhtyxn" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_docking_purple_green.png" id="1_ckl75"]
+[ext_resource type="Texture2D" uid="uid://cromk1nsiehyb" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_docking_purple_green_v2.png" id="2_eum1b"]
+[ext_resource type="Texture2D" uid="uid://crrfxd3ya65ij" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_docking_purple_white.png" id="3_badqa"]
+[ext_resource type="Texture2D" uid="uid://15legnrw55wh" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_docking_purple_white_v2.png" id="4_d0mve"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ckl75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eum1b")
+}],
+"loop": true,
+"name": &"DOCKING",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_badqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d0mve")
+}],
+"loop": true,
+"name": &"NOT_DOCKING",
+"speed": 5.0
+}]

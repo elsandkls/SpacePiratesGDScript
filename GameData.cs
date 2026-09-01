@@ -14,65 +14,85 @@ public partial class GameData : Node
     private const int max_height = 1000; 
     public const int GridWidth = max_width;
     public const int GridHeight = max_height;
- 
-    public const string STATE_IDLE = "IDLE";
+  
     public const string STATE_MOVEMENT = "MOVING";
-
     public const string STATE_DAMAGED = "DAMAGED";
     public const string STATE_NORMAL = "NORMAL";
+    public const string STATE_HEALING = "HEALING";
+    public const string STATE_IDLE = "IDLE";
+    public const string STATE_STATIONARY = "STATIONARY";
+    public const string STATE_DOCKING = "DOCKING";
  
+    public const string DAMAGED_MOVING = "DAMAGED_MOVING";
+    public const string DAMAGED_STATIONARY = "DAMAGED_STATIONARY";
 
-    public const string ANIM_IDLE_LEFT = "LEFT_IDLE";
-    public const string ANIM_IDLE_RIGHT = "RIGHT_IDLE";
-    public const string ANIM_IDLE_UP = "UP_IDLE";
-    public const string ANIM_IDLE_DOWN = "DOWN_IDLE";
+    public const string DOCKING_MOVING = "DOCKING_MOVING";
+    public const string DOCKING_STATIONARY = "DOCKING_STATIONARY";
 
-    public const string ANIM_LEFT = "LEFT";
-    public const string ANIM_RIGHT = "RIGHT";
-    public const string ANIM_UP = "UP";
-    public const string ANIM_DOWN = "DOWN";
+    public const string HEALING_MOVING = "HEALING_MOVING";
+    public const string HEALING_STATIONARY = "HEALING_STATIONARY";
 
-    public const string ANIM_LEFT_DAMAGED = "LEFT_DAMAGED";
-    public const string ANIM_RIGHT_DAMAGED = "RIGHT_DAMAGED";
-    public const string ANIM_UP_DAMAGED = "UP_DAMAGED";
-    public const string ANIM_DOWN_DAMAGED = "DOWN_DAMAGED";
-
-    
-    public const string ANIM_IDLE_LEFT_DAMAGED = "LEFT_DAMAGED";
-    public const string ANIM_IDLE_RIGHT_DAMAGED = "RIGHT_DAMAGED";
-    public const string ANIM_IDLE_UP_DAMAGED = "UP_DAMAGED";
-    public const string ANIM_IDLE_DOWN_DAMAGED = "DOWN_DAMAGED";
+    public const string IDLE_MOVING = "IDLE_MOVING";
+    public const string IDLE_STATIONARY = "IDLE_STATIONARY";
 
     public const string DIRECTION_RIGHT = "RIGHT";
-    public const string DIRECTION_LEFT = "LEFT";
-    public const string DIRECTION_UP = "UP";
+    public const int DIRECTION_RIGHT_ANGLE = 90;
     public const string DIRECTION_DOWN = "DOWN";
+    public const int DIRECTION_DOWN_ANGLE  = 180;
+    public const string DIRECTION_LEFT = "LEFT";
+    public const int DIRECTION_LEFT_ANGLE  = 270;
+    public const string DIRECTION_UP = "UP";
+    public const int DIRECTION_UP_ANGLE  = 0; 
 
     public string Get_DIRECTION_RIGHT()
     { 
         var func_name = "Get_DIRECTION_RIGHT";   
         if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_RIGHT ); }
         return( DIRECTION_RIGHT );
-    }  
+    }      
+    public int Get_DIRECTION_RIGHT_ANGLE()
+    { 
+        var func_name = "Get_DIRECTION_RIGHT_ANGLE";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_RIGHT_ANGLE ); }
+        return( DIRECTION_RIGHT_ANGLE );
+    } 
+    public string Get_DIRECTION_DOWN()
+    { 
+        var func_name = "Get_DIRECTION_DOWN";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_DOWN ); }
+        return( DIRECTION_DOWN );
+    } 
+    public int Get_DIRECTION_DOWN_ANGLE()
+    { 
+        var func_name = "Get_DIRECTION_DOWN_ANGLE";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_DOWN_ANGLE ); }
+        return( DIRECTION_DOWN_ANGLE );
+    } 
+    
     public string Get_DIRECTION_LEFT()
     { 
         var func_name = "Get_DIRECTION_LEFT";   
         if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_LEFT ); }
         return( DIRECTION_LEFT );
     }  
+    public int Get_DIRECTION_LEFT_ANGLE()
+    { 
+        var func_name = "Get_DIRECTION_LEFT_ANGLE";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_LEFT_ANGLE ); }
+        return( DIRECTION_LEFT_ANGLE );
+    }  
     public string Get_DIRECTION_UP()
     { 
         var func_name = "Get_DIRECTION_UP";   
         if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_UP ); }
         return( DIRECTION_UP );
-    }  
-    public string Get_DIRECTION_DOWN()
+    }   
+    public int Get_DIRECTION_UP_ANGLE()
     { 
-        var func_name = "Get_DIRECTION_DOWN";   
-        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_DOWN ); }
-        return( DIRECTION_DOWN );
+        var func_name = "Get_DIRECTION_UP_ANGLE";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + DIRECTION_UP_ANGLE ); }
+        return( DIRECTION_UP_ANGLE );
     }  
-
 
     public string Get_STATE_MOVEMENT()
     { 
@@ -102,6 +122,27 @@ public partial class GameData : Node
     } 
  
 
+    public string Get_STATE_HEALING()
+    { 
+        var func_name = "Get_STAGet_STATE_HEALINGTE_DAMAGED";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + STATE_HEALING ); }
+        return( STATE_HEALING );
+    } 
+ 
+    public string Get_STATE_STATIONARY()
+    { 
+        var func_name = "Get_STATE_STATIONARY";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + STATE_STATIONARY ); }
+        return( STATE_STATIONARY );
+    } 
+ 
+    public string Get_STATE_DOCKING()
+    { 
+        var func_name = "Get_STATE_DOCKING";   
+        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]" + STATE_DOCKING ); }
+        return( STATE_DOCKING );
+    } 
+    
     public void SetGodotData(Dictionary data)
     { 
         var func_name = "SetGodotData";
@@ -236,139 +277,5 @@ public partial class GameData : Node
         return( last_known_direction );
     }   
 
-
-    public (string, string) GameConstants(string data, string mystate, string movement)
-    {
-        var func_name = "GameConstants"; 
-        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] " + data); }
-
-        if (data == DIRECTION_RIGHT){ 
-            if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]  MATCH: " + DIRECTION_RIGHT); }
-
-            if (movement == STATE_IDLE)  // no movement
-            {
-                if(mystate == STATE_NORMAL) // state not damaged = normal
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_RIGHT); }
-                    return (DIRECTION_RIGHT, ANIM_IDLE_RIGHT);   
-                }
-                else // state damaged
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_RIGHT_DAMAGED); }
-                    return (DIRECTION_RIGHT, ANIM_RIGHT_DAMAGED);                    
-                } 
-            }
-            else // movement, not idle
-            {
-                if(mystate == STATE_NORMAL) // state not damaged = normal
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_RIGHT); }
-                    return (DIRECTION_RIGHT, ANIM_RIGHT);   
-                }
-                else // state damaged
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_RIGHT_DAMAGED); }
-                    return (DIRECTION_RIGHT, ANIM_IDLE_RIGHT_DAMAGED);                    
-                } 
-            }
  
-        }        
-
-        if (data == DIRECTION_LEFT){ 
-
-            if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]  MATCH: " + DIRECTION_LEFT); }
-
-            if (movement == STATE_IDLE)  // no movement
-            {
-                if(mystate == STATE_NORMAL) // state not damaged = normal
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_LEFT); }
-                    return (DIRECTION_LEFT, ANIM_IDLE_LEFT);   
-                }
-                else // state damaged
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT_DAMAGED); }
-                    return (DIRECTION_LEFT, ANIM_IDLE_LEFT_DAMAGED);                    
-                } 
-            }
-            else // movement, not idle
-            {
-                if(mystate == STATE_NORMAL) // state not damaged = normal
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT); }
-                    return (DIRECTION_LEFT, ANIM_LEFT);   
-                }
-                else // state damaged
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT_DAMAGED); }
-                    return (DIRECTION_LEFT, ANIM_IDLE_LEFT_DAMAGED);                    
-                } 
-            } 
-        }   
-
-        if (data == DIRECTION_UP){ 
-            if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]  MATCH: " + DIRECTION_UP); }
-
-            if (movement == STATE_IDLE)  // no movement
-            {
-                if(mystate == STATE_NORMAL) // state not damaged = normal
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_UP); }
-                    return (DIRECTION_UP, ANIM_IDLE_UP);   
-                }
-                else // state damaged
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_UP_DAMAGED); }
-                    return (DIRECTION_UP, ANIM_UP_DAMAGED);                    
-                } 
-            }
-            else // movement, not idle
-            {
-                if(mystate == STATE_NORMAL) // state not damaged = normal
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT); }
-                    return (DIRECTION_UP, ANIM_UP);   
-                }
-                else // state damaged
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_UP_DAMAGED); }
-                    return (DIRECTION_UP, ANIM_IDLE_UP_DAMAGED);                    
-                } 
-            }    
-        }        
-        if (data == DIRECTION_DOWN){ 
-            if (debug == 1) { GD.Print(ClassName + "[" + func_name + "]  MATCH: " + DIRECTION_DOWN); }
-
-            if (movement == STATE_IDLE)  // no movement
-            {
-                if(mystate == STATE_NORMAL) // state not damaged = normal
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_IDLE_DOWN); }
-                    return (DIRECTION_DOWN, ANIM_IDLE_DOWN);   
-                }
-                else // state damaged
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_DOWN_DAMAGED); }
-                    return (DIRECTION_DOWN, ANIM_DOWN_DAMAGED);                    
-                } 
-            }
-            else // movement, not idle
-            {
-                if(mystate == STATE_NORMAL) // state not damaged = normal
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_LEFT); }
-                    return (DIRECTION_DOWN, ANIM_DOWN);   
-                }
-                else // state damaged
-                {
-                    if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] MATCH: " + ANIM_DOWN_DAMAGED); }
-                    return (DIRECTION_DOWN, ANIM_IDLE_DOWN_DAMAGED);                    
-                } 
-            }   
-        }
-     
-    
-        if (debug == 1) { GD.Print(ClassName + "[" + func_name + "] NO MATCH - DEFAULT: " + ANIM_UP); }
-        return (DIRECTION_UP, ANIM_UP);  
-    }
 }

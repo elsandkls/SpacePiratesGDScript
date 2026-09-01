@@ -1,0 +1,57 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://ba3wwyp8woyle"]
+
+[ext_resource type="Texture2D" uid="uid://bjgumc883pucc" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_damaged_lvl_1_pink.png" id="1_r1hvw"]
+[ext_resource type="Texture2D" uid="uid://c3auye4vw5754" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_damaged_lvl_1_pink_v2.png" id="2_3g3m6"]
+[ext_resource type="Texture2D" uid="uid://cnxflapn45mms" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_damaged_lvl_2_purple.png" id="3_g5hdw"]
+[ext_resource type="Texture2D" uid="uid://nccvkqiti01" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_damaged_lvl_2_purple_v2.png" id="4_bajka"]
+[ext_resource type="Texture2D" uid="uid://buvtjp4kpu8n" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_damaged_lvl_3_red.png" id="5_0tlly"]
+[ext_resource type="Texture2D" uid="uid://cwufqufbdy2x2" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_damaged_lvl_3_red_v2.png" id="6_2c17j"]
+[ext_resource type="Texture2D" uid="uid://cegyahtia37bw" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_damaged_lvl_0_blue.png" id="7_g5hdw"]
+[ext_resource type="Texture2D" uid="uid://bnyi58lany572" path="res://Resources/Player/ArtAssets/player_space_ship_level_1_down_base_damaged_lvl_0_blue_v2.png" id="8_bajka"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r1hvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3g3m6")
+}],
+"loop": true,
+"name": &"DAMAGED_V1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g5hdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bajka")
+}],
+"loop": true,
+"name": &"DAMAGED_V2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0tlly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2c17j")
+}],
+"loop": true,
+"name": &"DAMAGED_V3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_g5hdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bajka")
+}],
+"loop": true,
+"name": &"NOT_DAMAGED",
+"speed": 5.0
+}]

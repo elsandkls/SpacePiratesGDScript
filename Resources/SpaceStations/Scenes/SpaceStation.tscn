@@ -1,10 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3x4eu0mjcklc"]
+[gd_scene load_steps=8 format=3 uid="uid://b3x4eu0mjcklc"]
 
 [ext_resource type="Script" uid="uid://dom5khmt5ea05" path="res://Resources/SpaceStations/Scripts/SpaceStation.cs" id="1_d678p"]
 [ext_resource type="SpriteFrames" uid="uid://bdhoghx76ltyd" path="res://Resources/SpaceStations/Animations/SpaceStation.tres" id="2_fjib7"]
+[ext_resource type="Script" uid="uid://pf11aq73mfpj" path="res://Resources/SpaceStations/Scripts/SpaceStationArea2D.cs" id="3_k7ac5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_30fpm"]
+radius = 15.0
+height = 126.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7ac5"]
+radius = 13.0
+height = 124.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdqry"]
+radius = 15.0
+height = 128.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1em74"]
+radius = 15.0
+height = 128.0
 
 [node name="SpaceStation" type="Node2D"]
 script = ExtResource("1_d678p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_fjib7")
+
+[node name="SpaceStation_Area2D" type="Area2D" parent="."]
+script = ExtResource("3_k7ac5")
+
+[node name="CollisionShape2D_1" type="CollisionShape2D" parent="SpaceStation_Area2D"]
+position = Vector2(1, -110)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_30fpm")
+
+[node name="CollisionShape2D_2" type="CollisionShape2D" parent="SpaceStation_Area2D"]
+position = Vector2(116, 7)
+shape = SubResource("CapsuleShape2D_k7ac5")
+
+[node name="CollisionShape2D_3" type="CollisionShape2D" parent="SpaceStation_Area2D"]
+position = Vector2(0, 114)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pdqry")
+
+[node name="CollisionShape2D_4" type="CollisionShape2D" parent="SpaceStation_Area2D"]
+position = Vector2(-115, 5)
+shape = SubResource("CapsuleShape2D_1em74")
